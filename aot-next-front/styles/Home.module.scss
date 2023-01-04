@@ -44,32 +44,6 @@
       }
     }
 
-    .menuCard{
-      // width: 33%;
-      // background-color: rgba($colour1, .3);
-      color: $colour2;
-      
-      h3{
-        font-family: 'Inspiration', cursive;
-        font-size: 2.25em;
-        margin-left: 10px;
-      }
-
-      .menu{
-        list-style: none;
-      
-        li{
-          position: relative;
-          margin: 1em;
-          font-size: 1.25em;
-
-          .image{
-            width: auto;
-            height: .75em;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -115,7 +89,7 @@
 
 .main{
   width: 100%;
-  // padding: .25em;
+  background-color: $colour2;
 
   .highlights{
     width: 100%;
