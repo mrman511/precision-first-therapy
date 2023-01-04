@@ -1,6 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+
+import Header from '../components/global/Header';
+import Hero from '../components/index/banner/Hero';
 
 
 export default function Home() {
@@ -14,63 +17,16 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"/>
+        {/* <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"/> */}
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap" rel="stylesheet"/>
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <div className={ styles.banner }>
-        <header className={ styles.header }>
-          <h1>
-            <span>aot</span>
-            services
-          </h1>
-          <div className={ styles.mcbuttonContainer }>
-            <div className={ styles.mcbutton}>
-              <b className={ styles.mcbuttonTop }></b>
-              <b className={ styles.mcbuttonMiddle }></b>
-              <b className={ styles.mcbuttonBottom }></b>
-            </div>
-          </div>
-        </header>
-
-        <section className={ styles.hero }>
-          <div className={ styles.imageContainer }>
-            <img className={ styles.image } src="../images/banner-Image-purple.png" alt=""/>
-          </div>
-
-          <div className={ styles.menuCard }>
-            <h3>Occupational Therapy Services</h3>
-            <ul className="menu">
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Concussion Management
-              </li>
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Cogitive Rehabilitation
-              </li>
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Return to Work Planning
-              </li>
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Anxiety Focus Treatments
-              </li>
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Ergonomic Assessments
-              </li>
-              <li>
-                <img className={ styles.image } src="../images/leaf-purple.png" alt=""/>
-                Functional Evaluations
-              </li>
-            </ul>
-          </div>
-        </section>
+        <Header styles={ styles }/>
+        <Hero styles={ styles }/>
       </div>
 
       <main className={ styles.main }>
