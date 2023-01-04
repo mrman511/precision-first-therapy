@@ -1,0 +1,52 @@
+/////////////////
+/////COLOURS/////
+/////////////////
+$colour1: #2F4858;
+$colour2: #9BAEBC;
+$colour3: #677987;
+$colour4: #553E4C;
+$colour5: #876E7D;
+
+//SHADING
+
+$DBLShadow: 3px 3px 10px -5px $colour3;
+
+//////////////////
+///////FLEX//////
+/////////////////
+
+@mixin flexRowCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexRowCenterBetween {
+  @include flexRowCenter();
+  justify-content: space-between;
+}
+
+@mixin flexRowCenterEven {
+  @include flexRowCenter();
+  justify-content: space-evenly;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColumnCenter {
+  @include flexColumn();
+  align-items: center;
+}
+
+@mixin flexColumnCenterBetween {
+  @include flexColumnCenter();
+  justify-content: space-between;
+}
+
+@mixin flexColumnCenterEven {
+  @include flexColumnCenter();
+  justify-content: space-evenly;
+}
+
