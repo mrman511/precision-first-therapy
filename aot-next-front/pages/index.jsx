@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 import Header from '../components/global/Header';
 import Hero from '../components/index/banner/Hero';
+
+import HighlightList from '../components/index/highlights/HighlightList'
 
 
 export default function Home() {
@@ -30,49 +32,7 @@ export default function Home() {
       </div>
 
       <main className={ styles.main }>
-        <section className={ styles.highlights }>
-
-          <article className={[styles.highlightCard, styles.cogRehab].join(' ')}>
-            <div className={ styles.highlightImage }>
-              <img src="../images/cognitive-rehab.jpg" alt=""/>
-            </div>
-
-            <div className={ [styles.highlightImage, styles.shading].join(' ') }></div>
-
-            <div className={ [styles.info, styles.positive].join(' ') }>
-              <h3>Cogitive Rehabilitation</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.</p>
-            </div>
-            <div className={ [styles.info, styles.negative].join(' ') }>
-              <h3>Cogitive Rehabilitation</h3>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.</p>
-            </div>
-          </article>
-
-          
-          <article className={[styles.highlightCard, styles.ergonomics].join(' ')}>
-            <div className={ [styles.highlightImage, styles.positive].join(' ') }>
-              <img src="../images/ergonomics-positive.jpg" alt=""/>
-            </div>
-            <div className={ [styles.highlightImage, styles.negative].join(' ') }>
-              <img src="../images/ergonomics-negative.jpg" alt=""/>
-            </div>
-
-            <div className={ [styles.highlightImage, styles.shading].join(' ') }></div>
-
-            <div className={ [styles.info, styles.positive].join(' ') }>
-              <h3>Ergonomic Assessments</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.</p>
-            </div>
-            <div className={ [styles.info, styles.negative].join(' ') }>
-              <h3>Ergonomic Assessments</h3>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.</p>
-            </div>
-          </article>
-
-        </section>
+        <HighlightList />
       </main>
 
       <footer className={ styles.footer }>
