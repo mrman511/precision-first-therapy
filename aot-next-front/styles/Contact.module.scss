@@ -1,0 +1,164 @@
+@import '../styles/variables.scss';
+@import '../styles/buttons.scss';
+
+.contact{
+  width: 100%;
+  @include flexItemCenter;
+  color: $colour1;
+  background-color: $colour2;
+
+  .form{
+    @include flexColumnCenter;
+  }
+}
+.form{
+  width: 90%;
+  margin: 1em 0;
+
+  h3{
+    font-size: 60px;
+    font-family: $cursiveFont;
+  }
+
+  .contactMessage{
+    width: 90%;
+    
+    @include flexColumn;
+    
+    p{
+      max-width: 500px;
+      margin: 0;
+      margin-top: .5em;
+      font-size: 21px;
+    }
+    .contactLine{
+      // display: none;
+      margin-top: 1.5em;
+    }
+    .contactEmail{
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.email{
+  width: 100%;
+  
+  .inputArea{
+    width: 100%;
+    max-width: 500px;
+    @include flexColumn;
+    font-size: 28px;
+    background-color: white;
+    color: $colour1;
+    border-radius: 3px;
+    border-style: inset;
+
+    &::placeholder{
+      color: $colour1;
+    }
+  }
+
+  .info{
+    margin-bottom: 10px;
+
+    label {
+      font-size: 28px;
+      width: 50px;
+    }
+  }
+  
+  .sentBy{
+
+    .inputArea {
+      height: 38px;
+    }
+  }
+  
+  .message {
+    height: 250px;
+    // width: 90%;
+  
+    .inputArea{
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      font-size: 21px;
+    }
+  }
+
+  .btn{
+    width: 100%;
+    max-width: 500px;
+    // height: 35px;
+
+    font-size: 28px;
+  }
+  
+}
+
+
+//////////////////
+///Confirmation///
+//////////////////
+.confirm{
+
+  .confirmation {
+    width: 100%;
+    height: 100%;
+  
+    @include flexColumnCenterEven;
+  
+    h4 {
+      width: 100%;
+      text-align: center;
+      font-size: 28px;
+      margin-top: 1em;
+      margin-right: 0;
+    }
+  
+    .messageContainer {
+      width: 100%;
+      // max-width: 300px;
+      text-align: center;
+  
+      .confirmMessage{
+        max-width: 400px;
+        margin-right: 0;
+        font-size: 21px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+/////////////////
+//Media Queries//
+/////////////////
+
+@media only screen and (min-width: 500px){
+
+  .email{
+
+    .message{
+      height: 150px;
+    }
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .email{
+
+    .message{
+      height: 100px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px){
+  .contact-message {
+    margin-left: 20%;
+  }
+}

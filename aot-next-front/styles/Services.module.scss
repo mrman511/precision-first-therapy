@@ -1,0 +1,64 @@
+@import './variables.scss';
+@import './buttons.scss';
+
+.serviceList{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: $colour2;
+
+  .serviceCard{
+    width: 90vw;
+    margin: 1em 5vw; 
+    padding: 1em;
+    max-width: 500px;
+    @include flexColumnCenter;
+    background-color: $colour4;
+    box-shadow: $LBLowShadow;
+    overflow: hidden;
+    border-radius: 1em;
+
+    .serviceImageContainer{
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .titleContainer{
+      width: 95%;
+      margin-left: 5%;
+
+      h3{
+        color: $colour5;
+      }
+    }
+
+    .info{
+      margin: 1em;
+
+      .btn{
+        margin-top: .5em;
+        width: 100%;
+      }
+    }
+
+    .clinicInfo{
+      display: none
+    }
+  }
+
+  .alt{
+    background-color: $colour2;
+    color: $colour1;
+
+    .info{
+
+      .btn{
+        box-shadow: $LBLowShadow;
+      }
+    }
+  }
+}

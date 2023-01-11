@@ -10,10 +10,21 @@ $colour5: #876E7D;
 //SHADING
 
 $DBLShadow: 3px 3px 10px -5px $colour3;
+$LBLowShadow: 3px 3px 10px -5px darken($colour3, 20%);
+
+//fonts
+
+$cursiveFont: 'Inspiration', cursive;
 
 //////////////////
 ///////FLEX//////
 /////////////////
+
+@mixin flexItemCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 @mixin flexRowCenter {
   display: flex;
