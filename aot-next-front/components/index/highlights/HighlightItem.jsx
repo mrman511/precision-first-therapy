@@ -15,8 +15,6 @@ export default function HighLightItem({ styles, highlight }){
         <Image src={ negImage } alt={ highlight.title } layout="fill" objectFit="contain" />
       </div>}
 
-      <div className={ [styles.highlightImage, styles.shading].join(' ') }></div>
-
       <div className={ [styles.info, styles.positive].join(' ') }>
         <h3>{ highlight.title }</h3>
         <p>{ highlight.positive_info }</p>

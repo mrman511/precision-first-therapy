@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+.btn{
+  box-shadow: 2px 2px 5px -2px black;
+  background-color: $colour3;
+  font-weight: bold;
+  padding: 0;
+  border: none;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.btnMd {
+  height: 35px;
+  width: 125px;
+  border-radius: 5px;
+}
+
+.btnLg{
+  height: 50px;
+  width: 80%;
+  border-radius: 6px;
+  font-size: 1.25em;
+}
