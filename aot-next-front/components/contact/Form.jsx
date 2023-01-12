@@ -7,14 +7,29 @@ export default function Form(props) {
   const { styles, setName, setEmail, setMessage, form, submitForm, handleChange, error } = props;
 
   return (
-    <article className={ styles.form }>
-      <div className={ styles.contactMessage }>
+    <article className={ styles.formContainer }>
+      <div className={ [styles.contactMessage, styles.gridItem].join(' ') }>
         <h3>Reach Out</h3>
         <p className={ styles.contactLine }>Contact us to book an appointment, get more information on our services, or ask any other questions.</p>
-        <p className={ styles.contactEmail }><strong>admin@aotservices.ca</strong></p>
       </div>
 
-      <form ref={ form } onSubmit={ submitForm } className={ styles.email }>
+      <div className={ [styles.contactDetails, styles.gridItem].join(' ') }>
+        <div>
+          <h4><strong>Our Email:</strong></h4>
+          <p className={ styles.contactEmail }>admin@aotservices.ca</p>
+        </div>
+        <div>
+          <h4><strong>Our Phone:</strong></h4>
+          <p className={ styles.contactEmail }>(778) 788-8887</p>
+        </div>
+      </div>
+
+      <div className={ [styles.disclaimer, styles.gridItem].join(' ') }>
+        <p>All enquiries are handled with absolute discretion. Before calling or writing to us please read our <span>Privacy Policy</span> for more details on how we use and look after your information.</p>
+      </div>
+
+      {/* <div className={ styles.form } ></div> */}
+      <form ref={ form } onSubmit={ submitForm } className={ [styles.email, styles.gridItem].join(' ') }>
         { error === "INCOMPLETE" && <p className={ styles.error }>
           *Please ensure all input feilds are complete*
         </p> }
@@ -26,15 +41,16 @@ export default function Form(props) {
         </p> }
 
         <div className={ [styles.info, styles.sentBy].join(' ') }>
-          <label>Name:</label>
-          <input type="text" id="name" name="user_name" className={ styles.inputArea } onChange={(e) => handleChange(e, setName) } />
+          <input placeholder="Name*" type="text" id="name" name="user_name" className={ styles.inputArea } onChange={(e) => handleChange(e, setName) } />
         </div>
         <div className={ [styles.info, styles.sentBy].join(' ') }>
-          <label>Email:</label>
-          <input type="email" id="email" name="user_email" className={ styles.inputArea } onChange={(e) => handleChange(e, setEmail) } />
+          <input placeholder="Email*" type="email" id="email" name="user_email" className={ styles.inputArea } onChange={(e) => handleChange(e, setEmail) } />
+        </div>
+        <div className={ [styles.info, styles.sentBy].join(' ') }>
+          <input placeholder="Subject*" type="text" id="subject" name="subject" className={ styles.inputArea } onChange={(e) => handleChange(e, setEmail) } />
         </div>
         <div className={ [styles.info, styles.message].join(' ') }>
-          <textarea name="message" id="message" className={ styles.inputArea } onChange={(e) => handleChange(e, setMessage) } placeholder={ placeholder }/>
+          <textarea placeholder={ placeholder } name="message" id="message" className={ styles.inputArea } onChange={(e) => handleChange(e, setMessage) }/>
         </div>
         <button className={ [styles.btn, styles.btnLg].join(' ') } type="submit" >SEND</button>
       </form>
