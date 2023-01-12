@@ -5,7 +5,7 @@ export default function ServiceItem({ styles, service, index }){
   const posImage = require(`../../public/images/${service.positive_image_path}`)
 
   return(
-    <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 === 0 ? styles.alt : '' )].join(' ')}>
+    <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 !== 0 ? styles.alt : '' )].join(' ')}>
       <div className={ styles.serviceImageContainer }>
         <Image src={ posImage } alt={ service.title } fill placeholder="blur" />
       </div>

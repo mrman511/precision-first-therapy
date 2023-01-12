@@ -6,6 +6,7 @@ import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
 
 import Hero from '../components/index/banner/Hero';
+import Blurb from '../components/index/banner/Blurb'
 
 import HighlightList from '../components/index/highlights/HighlightList'
 
@@ -32,6 +33,8 @@ export default function Home() {
         <Header styles={ styles }/>
         <Hero styles={ styles }/>
       </div>
+
+      {/* <Blurb styles={ styles } /> */}
 
       <main className={ styles.main }>
         <HighlightList />

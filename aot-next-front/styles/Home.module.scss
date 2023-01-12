@@ -2,24 +2,32 @@
 
 .header{
   width: 100%;
-  height: 150px;
+  height: 100px;
   @include flexRowCenterBetween;
-  // background-color: ;
+  background-color: white;
 
-  h1{
+  .title{
+    position: relative;
     margin: 0;
-    margin-left: 1em;
-    color: $colour2;
+    margin-left: 10%;
+    color: $colour3;
 
     span{
       font-family: $cursiveFont;
       font-size: 3em;
     }
   }
+
+  .nav{
+    display: none;
+  }
 }
 
 .alternate{
   background-color: #2F4858;
+  .title{
+    color: lighten($colour2, 20%);
+  }
 }
 
 .banner {
@@ -64,7 +72,7 @@
     height: 100%;
     position: relative;
     @include flexColumnCenter;
-    background-color: $colour1;
+    background-color: white;
     border-radius: 4px;
     box-shadow: $DBLShadow;
 
@@ -88,16 +96,44 @@
   }
 }
 
+.blurb{
+  width: 100%;
+  height: 300px;
+  @include flexItemCenter;
+  color: $colour1;
+  background-color: white;
+  
+  .blurbContainer{
+    width: 90%;
+    height: 75%;
+    @include flexColumn;
+    // border-top: 2px solid $colour1;
+    border-bottom: 2px solid $colour1;
+
+    h3{
+      margin-left: 10%;
+      font-size: 48px;
+      font-family: $cursiveFont;
+    }
+    
+    p{
+      width: 80%;
+      font-size: 21px;
+      text-align: left;
+    }
+  }
+}
+
 ////////////////////
 ////////MAIN////////
 ////////////////////
 
 .main{
+  margin-top: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
   // position: relative;
-  background-color: $colour2;
 }
 
 //////////////////////////
@@ -120,9 +156,44 @@
 
     .header{
 
-      h1{
-        margin-left: 10%;
+      .title{
+        margin: 0;
+        left: 10%
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1000px){
+
+  .header{
+
+    .nav{
+      width: 50%;
+      height: 100%;
+      display: block;
+      
+      ul{
+        width: 100%;
+        height: 100%;
+        @include flexRowCenterEven;
+        color: $colour3;
+        font-size: 21px;
+        font-weight: 700;
+        list-style: none;
+      }
+    }
+  }
+
+  .alternate{
+    .nav{
+      ul{
+        color: lighten($colour2, 20%)
+      }
+    }
+  }
+
+  .mcbuttonContainer{
+    display: none;
   }
 }

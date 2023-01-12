@@ -15,7 +15,7 @@
     max-width: 500px;
     @include flexColumnCenter;
     background-color: $colour4;
-    box-shadow: $LBLowShadow;
+    box-shadow: $DBLShadow;
     overflow: hidden;
     border-radius: 1em;
 
@@ -53,6 +53,7 @@
   .alt{
     background-color: $colour2;
     color: $colour1;
+    box-shadow: $LBLowShadow;
 
     .info{
 

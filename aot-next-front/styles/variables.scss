@@ -4,13 +4,16 @@
 $colour1: #2F4858;
 $colour2: #9BAEBC;
 $colour3: #677987;
+// $colour4: #4D536E;
 $colour4: #553E4C;
 $colour5: #876E7D;
 
 //SHADING
 
 $DBLShadow: 3px 3px 10px -5px $colour3;
+$DBDeepShadow: 3px 3px 10px $colour3;
 $LBLowShadow: 3px 3px 10px -5px darken($colour3, 20%);
+$LBDeepShadow: 3px 3px 10px darken($colour3, 20%);
 
 //fonts
 
@@ -22,8 +25,9 @@ $cursiveFont: 'Inspiration', cursive;
 
 @mixin flexItemCenter {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 @mixin flexRowCenter {
@@ -61,3 +65,7 @@ $cursiveFont: 'Inspiration', cursive;
   justify-content: space-evenly;
 }
 
+@mixin fill {
+  width: 100%;
+  height: 100%;
+}
