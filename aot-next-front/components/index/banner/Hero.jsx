@@ -1,15 +1,16 @@
 import Image from "next/image";
-import Menu from "../../global/Menu";
+import Services from "./ServiceList";
+import bannerImage from '../../../public/images/banner-Image-purple.png';
 
 export default function Hero({ styles }){
 
   return(
     <section className={ styles.hero }>
       <div className={ styles.imageContainer }>
-        <img className={ styles.image } src="../images/banner-Image-purple.png" alt=""/>
+        <Image  src={ bannerImage } fill alt="AOT services" placeholder="shimmer" />
       </div>
       
-      <Menu styles={ styles } />
+      <Services styles={ styles } />
     </section>
   );
 }

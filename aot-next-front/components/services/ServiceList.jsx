@@ -1,10 +1,8 @@
 import ServiceItem from './ServiceItem';
 
-import styles from '../../styles/Services.module.scss';
-
 import services from '../../utils/data/servicesData';
 
-export default function ServiceList(){
+export default function ServiceList({ styles }){
 
   const parsedServices = services.map((item, i) => {
     return (
