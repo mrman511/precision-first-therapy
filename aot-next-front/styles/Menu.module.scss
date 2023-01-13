@@ -1,31 +1,8 @@
 @import './variables.scss';
 
 
-.menuCard {
-  color: $colour2;
-  
-  .menuTitle{
-    font-family: 'Inspiration', cursive;
-    font-size: 2.25em;
-    margin-left: 10px;
-  }
 
-  .menu{
-    list-style: none;
-    
-    .menuItem{
-      position: relative;
-      @include flexRowCenter;
-      margin: 1em;
-      font-size: 1em;
 
-      .imageContainer{
-        position: relative;
-        width: 1em;
-        height: .75em;
-        margin-right: .5em;
-      }
+@media only screen and (min-width: 750px){
 
-    }
-  }
 }

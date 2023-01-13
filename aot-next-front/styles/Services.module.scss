@@ -1,47 +1,105 @@
 @import './variables.scss';
 @import './buttons.scss';
 
+.serviceHeader{
+  width: 100%;
+  padding: 1.25em;
+  position: relative;
+  color: $colour1;
+  background-color: white;
+  // border: 1px solid black;
+  border-bottom-left-radius: $xlRadius;
+  border-bottom-right-radius: $xlRadius;
+  
+  z-index: 10;
+  
+  h2{
+    font-family: $cursiveFont;
+    font-size: 58px;
+  }
+}
+
 .serviceList{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: $colour2;
+  color: $colour1;
+  z-index: -1;
 
   .serviceCard{
-    width: 90vw;
-    margin: 1em 5vw; 
+    width: 100%;
     padding: 1em;
-    max-width: 500px;
-    @include flexColumnCenter;
-    background-color: $colour4;
+    padding-top: 80px;
+    // position: absolute;
+    position: relative;
+    // transform: translateY(-60px);
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-areas: 
+    "img p"
+    "img p";
+    // @include flexRowCenter;
+    background-color: $colour2;
     box-shadow: $DBLShadow;
     overflow: hidden;
-    border-radius: 1em;
+    border-bottom-left-radius: $lgRadius;
+    border-bottom-right-radius: $lgRadius;
+    box-shadow: $LBDeepShadow;
 
+    &:nth-child(1){
+      transform: translateY(-60px);
+      z-index: 6;
+    }
+    &:nth-child(2){
+      transform: translateY(-120px);
+      z-index: 5;
+    }
+    &:nth-child(3){
+      transform: translateY(-180px);
+      z-index: 3;
+    }
+    &:nth-child(4){
+      transform: translateY(-240px);
+      z-index: 2;
+    }
+    &:nth-child(5){
+      transform: translateY(-300px);
+      z-index: 1;
+    }
+    
     .serviceImageContainer{
       width: 100%;
-      height: 300px;
+      height: auto;
+      grid-area: img;
       position: relative;
+      // position: absolute;
       overflow: hidden;
       border-radius: 5px;
     }
 
-    .titleContainer{
-      width: 95%;
-      margin-left: 5%;
-
-      h3{
-        color: $colour5;
-      }
-    }
-
+    
     .info{
-      margin: 1em;
+      width: 95%;
+      margin: 1em auto;
+      grid-area: p;
+      
+      .titleContainer{
+        width: 95%;
+        margin-left: 5%;
+  
+        h3{
+          color: $colour5;
+        }
+      }
 
       .btn{
         margin-top: .5em;
         width: 100%;
+        color: $colour1;
+        background-color: $colour2;
+        border: 3px solid $colour1;
+        box-shadow: none;
       }
     }
 
@@ -51,14 +109,56 @@
   }
 
   .alt{
-    background-color: $colour2;
-    color: $colour1;
-    box-shadow: $LBLowShadow;
+    background-color: $colour1;
+    color: $colour2;
+    // box-shadow: $LBLowShadow;
+    grid-template-areas: "p img" "p img";
 
     .info{
 
       .btn{
-        box-shadow: $LBLowShadow;
+        color: $colour2;
+        background-color: $colour1;
+        border: 3px solid $colour2;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px){
+  .serviceList{
+
+    .serviceCard {
+      width: 50%;
+
+      &:nth-child(1){
+        transform: translateY(-60px);
+        z-index: 2;
+      }
+      &:nth-child(2){
+        transform: translateY(-60px);
+        z-index: 2;
+        background-color: $colour1;
+        color: $colour2;
+        
+      }
+      &:nth-child(3){
+        transform: translateY(-120px);
+        z-index: 1;
+
+        background-color: $colour1;
+        color: $colour2;
+      }
+      &:nth-child(4){
+        transform: translateY(-120px);
+        z-index: 1;
+        background-color: $colour2;
+        color: $colour1;
+      }
+      &:nth-child(5){
+        transform: translateY(-300px);
+        z-index: 1;
       }
     }
   }

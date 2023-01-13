@@ -4,14 +4,15 @@ export default function ServiceItem({ styles, service, index }){
 
   const posImage = require(`../../public/images/${service.positive_image_path}`)
 
+  const titleComponent = (<div className={ styles.titleContainer }>
+    <h2 className={ styles.title }>{ service.title }</h2>
+    { service.subtitle && <h3 className={ styles.subTitle }>{ service.subtitle }</h3> }
+  </div>)
+
   return(
     <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 !== 0 ? styles.alt : '' )].join(' ')}>
       <div className={ styles.serviceImageContainer }>
         <Image src={ posImage } alt={ service.title } fill placeholder="blur" />
-      </div>
-      <div className={ styles.titleContainer }>
-        <h2 className={ styles.title }>{ service.title }</h2>
-        { service.subtitle && <h3 className={ styles.subTitle }>{ service.subtitle }</h3> }
       </div>
 
       {/* { service.display === 'std' && <div className={ [styles.highlightImage, styles.negative].join(' ') }>
@@ -19,11 +20,13 @@ export default function ServiceItem({ styles, service, index }){
       </div>} */}
 
       <div className={ [ styles.info, styles.regInfo ].join(' ') }>
+        { titleComponent }
         <p>{ service.info }</p>
         <button className={ [styles.btn, styles.btnLg].join(' ') }>Learn About Our Approach</button>
       </div>
 
       { service.clinic_info && <div className={ [styles.info, styles.clinicInfo].join(' ') }>
+        { titleComponent }
         <p>{ service.clinic_info }</p>
       </div>}
     </article>

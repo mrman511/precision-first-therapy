@@ -4,7 +4,10 @@ import styles from '../styles/Home.module.scss';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer'
 
+import ServiceHeader from '../components/services/ServiceHeader';
 import ServiceList from '../components/services/ServiceList';
+
+import serviceStyles from '../styles/Services.module.scss';
 
 export default function Services(){
 
@@ -27,7 +30,8 @@ export default function Services(){
       <Header styles={ styles } alt={ true }/>
 
       <main className={ styles.main } >
-        <ServiceList />
+        <ServiceHeader styles={ serviceStyles }/>
+        <ServiceList styles={ serviceStyles }/>
       </main>
 
       <Footer styles={ styles }/>
