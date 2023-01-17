@@ -1,15 +1,18 @@
+import { useRouter } from 'next/router';
+
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer'
+import Header from '../../components/global/Header';
+import Footer from '../../components/global/Footer'
 
-import ServiceHeader from '../components/services/ServiceHeader';
-import ServiceList from '../components/services/ServiceList';
+import ServiceHeader from '../../components/services/ServiceHeader';
 
-import serviceStyles from '../styles/Services.module.scss';
+import serviceStyles from '../../styles/Services.module.scss';
 
-export default function Services(){
+export default function Service(){
+  const router = useRouter();
+  console.log('ROUTER::', router)
 
   return (
     <>
@@ -31,11 +34,9 @@ export default function Services(){
 
       <main className={ styles.main } >
         <ServiceHeader styles={ serviceStyles }/>
-        <ServiceList styles={ serviceStyles }/>
       </main>
 
       <Footer styles={ styles }/>
-
     </>
   );
 }

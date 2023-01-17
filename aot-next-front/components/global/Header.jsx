@@ -1,6 +1,8 @@
 import Mcbutton from './Mcbutton';
+import NavList from './NavList';
 
 export default function Header({ styles, alt }){
+
 
   return(
     <header className={ [styles.header, (alt ? styles.alternate : '' )].join(' ')  }>
@@ -8,14 +10,26 @@ export default function Header({ styles, alt }){
         <span>aot</span>
         services
       </h1>
-      <div className={ styles.nav }>
+      {/* <div className={ styles.nav }>
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Contact</li>
+          <a href="">
+            <li>Home</li>
+          </a>
+
+          <a href="">
+            <li>About Us</li>
+          </a>
+
+          <a href="">
+            <li>Services</li>
+          </a>
+
+          <a href="">
+            <li>Contact</li>
+          </a>
         </ul>
-      </div>
+      </div> */}
+      <NavList styles={ styles }/>
       <Mcbutton styles={styles} />
     </header>
   );

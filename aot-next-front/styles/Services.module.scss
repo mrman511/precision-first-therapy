@@ -25,7 +25,6 @@
   flex-wrap: wrap;
   justify-content: center;
   color: $colour1;
-  z-index: -1;
 
   .serviceCard{
     width: 100%;
@@ -37,8 +36,8 @@
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     grid-template-areas: 
-    "img p"
-    "img p";
+    "img img"
+    "p p";
     // @include flexRowCenter;
     background-color: $colour2;
     box-shadow: $DBLShadow;
@@ -125,8 +124,20 @@
   }
 }
 
-@media only screen and (max-width: 1000px ){
+// @media only screen and (max-width: 550px ){
+//   .serviceList{
+    
+//     .alt{
+//       grid-template-areas: "img img" "p p";
+//     }
+//   }
+// }
+@media only screen and (min-width: 600px ){
   .serviceList{
+
+    .serviceCard{
+      grid-template-areas: "img p" "img p";
+    }
     
     .alt{
       grid-template-areas: "p img" "p img";
@@ -139,6 +150,7 @@
 
     .serviceCard {
       width: 50%;
+      grid-template-areas: "img p" "img p";
 
       &:nth-child(1){
         transform: translateY(-60px);

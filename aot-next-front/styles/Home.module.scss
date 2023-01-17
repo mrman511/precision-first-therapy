@@ -162,9 +162,6 @@
 .main{
   width: 100%;
   @include flexColumnCenter;
-  // display: flex;
-  // justify-content: center;
-  // position: relative;
 }
 
 //////////////////////////
@@ -219,6 +216,7 @@
     .nav{
       width: 50%;
       height: 100%;
+      margin-right: 2em;
       display: block;
       
       ul{
@@ -230,12 +228,21 @@
         font-weight: 700;
         list-style: none;
 
-        li{
+        a{
+          width: 150px;
+          @include flexItemCenter;
 
-          &:hover{
-            color: $colour5;
-            font-size: 28px;
+          li{
+            &:hover{
+              color: $colour5;
+              font-size: 28px;
+            }
           }
+        }
+
+        .selected{
+          color: $colour5;
+          font-size: 28px;
         }
       }
     }

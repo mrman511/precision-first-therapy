@@ -7,7 +7,7 @@ export default function ServiceList({ styles }){
   const parsedServices = services.map((item, i) => {
     return (
       <ServiceItem
-        key={ `Service-${item.id_tag}` }
+        key={ `ServicesListItem-${item.id_tag}` }
         index={ i }
         styles={ styles }
         service={ item }
