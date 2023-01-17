@@ -8,9 +8,7 @@ import Confirmation from './Confirmation';
 import useVisualMode from '../../utils/hooks/useVisualMode';
 // import sendEmail from '../../utils/apiRequests/sendEmail';
 
-import styles from '../../styles/Contact.module.scss';
-
-export default function ContactMe() {
+export default function ContactMe({ styles }) {
   // props.setPage('CONTACT');
   const { mode, transition } = useVisualMode("FORM")
   const [name, setName] = useState(undefined);
