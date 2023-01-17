@@ -161,6 +161,7 @@
 
 .main{
   width: 100%;
+  @include flexColumnCenter;
   // display: flex;
   // justify-content: center;
   // position: relative;

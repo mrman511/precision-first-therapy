@@ -112,16 +112,24 @@
     background-color: $colour1;
     color: $colour2;
     // box-shadow: $LBLowShadow;
-    grid-template-areas: "p img" "p img";
-
+    
     .info{
-
+      
       .btn{
         color: $colour2;
         background-color: $colour1;
         border: 3px solid $colour2;
         box-shadow: none;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px ){
+  .serviceList{
+    
+    .alt{
+      grid-template-areas: "p img" "p img";
     }
   }
 }

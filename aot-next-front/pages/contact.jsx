@@ -3,7 +3,11 @@ import styles from '../styles/Home.module.scss';
 
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
+
+import ContactHeader from '../components/contact/ContactHeader';
 import ContactMe from '../components/contact/Contact';
+
+import contactStyles from '../styles/Contact.module.scss';
 
 export default function Contact(){
 
@@ -25,8 +29,9 @@ export default function Contact(){
       </Head>
       <Header styles={ styles } alt={ true }/>
 
-      <main className={ styles.main }>
-        <ContactMe />
+      <main className={ [ styles.main, contactStyles.main ].join(' ') }>
+        <ContactHeader styles={ contactStyles }/>
+        <ContactMe styles={ contactStyles }/>
       </main>
 
       <Footer styles={ styles }/>
