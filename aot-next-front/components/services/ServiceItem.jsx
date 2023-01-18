@@ -1,8 +1,18 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function ServiceItem({ styles, service, index }){
 
-  const posImage = require(`../../public/images/${service.positive_image_path}`)
+  const router = useRouter();
+  const posImage = require(`../../public/images/${service.image_path}`);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push({
+      pathname: '/services/service/',
+      query: { id: service.id }
+    });
+  }
 
   const titleComponent = (<div className={ styles.titleContainer }>
     <h2 className={ styles.title }>{ service.title }</h2>
@@ -22,13 +32,9 @@ export default function ServiceItem({ styles, service, index }){
       <div className={ [ styles.info, styles.regInfo ].join(' ') }>
         { titleComponent }
         <p>{ service.info }</p>
-        <button className={ [styles.btn, styles.btnLg].join(' ') }>Learn About Our Approach</button>
+        <button className={ [styles.btn, styles.btnLg].join(' ') } onClick={(e) => { handleSubmit(e) }}>Learn About Our Approach</button>
       </div>
 
-      { service.clinic_info && <div className={ [styles.info, styles.clinicInfo].join(' ') }>
-        { titleComponent }
-        <p>{ service.clinic_info }</p>
-      </div>}
     </article>
   );
 

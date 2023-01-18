@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
@@ -10,6 +13,15 @@ import ContactMe from '../components/contact/Contact';
 import contactStyles from '../styles/Contact.module.scss';
 
 export default function Contact(){
+
+  const router = useRouter();
+  const [subject, setSubject] = useState(undefined);
+
+  useEffect(()=>{
+    if (router.query.subject && !subject){
+      setSubject(router.query.subject)
+    }
+  })
 
   return (
     <>
@@ -31,7 +43,7 @@ export default function Contact(){
 
       <main className={ [ styles.main, contactStyles.main ].join(' ') }>
         <ContactHeader styles={ contactStyles }/>
-        <ContactMe styles={ contactStyles }/>
+        <ContactMe styles={ contactStyles } subject={ subject } setSubject={ setSubject }/>
       </main>
 
       <Footer styles={ styles }/>

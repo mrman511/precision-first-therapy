@@ -8,7 +8,7 @@ import Confirmation from './Confirmation';
 import useVisualMode from '../../utils/hooks/useVisualMode';
 // import sendEmail from '../../utils/apiRequests/sendEmail';
 
-export default function ContactMe({ styles }) {
+export default function ContactMe({ styles, subject, setSubject }) {
   // props.setPage('CONTACT');
   const { mode, transition } = useVisualMode("FORM")
   const [name, setName] = useState(undefined);
@@ -65,6 +65,8 @@ export default function ContactMe({ styles }) {
         setName={ setName }
         setEmail={ setEmail }
         setMessage={ setMessage }
+        subject={ subject }
+        setSubject={ setSubject }
         error={ errorType } 
         /> }
       {/* { mode === "STATUS" && < Status styles={ statusStyles }/> } */}

@@ -4,7 +4,7 @@ export default function Form(props) {
 
   const placeholder = 'Please write your message here and you will hear from me as soon as possible.'
 
-  const { styles, setName, setEmail, setMessage, form, submitForm, handleChange, error } = props;
+  const { styles, setName, setEmail, setMessage, subject, setSubject, form, submitForm, handleChange, error } = props;
 
   return (
     <article className={ styles.formContainer }>
@@ -43,12 +43,22 @@ export default function Form(props) {
         <div className={ [styles.info, styles.sentBy].join(' ') }>
           <input placeholder="Name*" type="text" id="name" name="user_name" className={ styles.inputArea } onChange={(e) => handleChange(e, setName) } />
         </div>
+        
         <div className={ [styles.info, styles.sentBy].join(' ') }>
           <input placeholder="Email*" type="email" id="email" name="user_email" className={ styles.inputArea } onChange={(e) => handleChange(e, setEmail) } />
         </div>
+
         <div className={ [styles.info, styles.sentBy].join(' ') }>
-          <input placeholder="Subject*" type="text" id="subject" name="subject" className={ styles.inputArea } onChange={(e) => handleChange(e, setEmail) } />
+          <input 
+            placeholder="Subject*" 
+            type="text" id="subject" 
+            name="subject" 
+            className={ styles.inputArea } 
+            onChange={(e) => handleChange(e, setSubject) }
+            value={ subject ? subject : '' } 
+            />
         </div>
+
         <div className={ [styles.info, styles.message].join(' ') }>
           <textarea placeholder={ placeholder } name="message" id="message" className={ styles.inputArea } onChange={(e) => handleChange(e, setMessage) }/>
         </div>

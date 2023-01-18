@@ -1,0 +1,74 @@
+@import './variables.scss';
+@import './buttons.scss';
+
+.service{
+  width: 100%;
+  margin: 2em 0;
+  display: grid;
+  grid-template: 300px auto auto auto / 1em 1fr 1em;
+  grid-template-areas: 
+    '. img .'
+    '. info .'
+    '. clinic .'
+    '. aptBtn .';
+  grid-row-gap: 2em;
+  
+  .imageContainer{
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    grid-area: img;
+    justify-self: center;
+    // overflow: hidden;
+  }
+  
+  .titleContainer{
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    grid-area: img;
+    justify-self: center;
+    @include flexColumn;
+    justify-content: end;
+    z-index: 1;
+    
+    .title{
+      width: 100%;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.63) 5%, white);
+      padding-bottom: 2em;
+
+      h2{
+        font-size: 48px;
+        font-family: $cursiveFont;
+      }
+    }
+  }
+
+  .infoContainer{
+    grid-area: info;
+    font-size: 21px;
+  }
+
+  .clinicInfo{
+    grid-area: clinic;
+  }
+
+  @include wireButton(white, $colour1);
+
+  .btn{
+    grid-area: aptBtn;
+    justify-self: center;
+  }
+}
+
+
+@media only screen and (min-width: 725px){
+
+  .service{
+    grid-template: 300px auto auto / 1em 400px 1fr 1em;
+    grid-template-areas: 
+      ". img info ."
+      '. clinic clinic .'
+      '. aptBtn aptBtn .'
+  }
+}

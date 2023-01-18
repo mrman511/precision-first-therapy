@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+import styles from '../../styles/Home.module.scss';
 
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer'
+import Header from '../../components/global/Header';
+import Footer from '../../components/global/Footer'
 
-import ServiceHeader from '../components/services/ServiceHeader';
-import ServiceList from '../components/services/ServiceList';
+import ServiceHeader from '../../components/services/ServiceHeader';
+import ServiceList from '../../components/services/ServiceList';
 
-import serviceStyles from '../styles/Services.module.scss';
+import serviceStyles from '../../styles/Services.module.scss';
 
 export default function Services(){
 
