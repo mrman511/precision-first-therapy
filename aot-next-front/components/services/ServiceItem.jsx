@@ -4,14 +4,14 @@ import { useRouter } from "next/router";
 export default function ServiceItem({ styles, service, index }){
 
   const router = useRouter();
-  const posImage = require(`../../public/images/${service.positive_image_path}`);
+  const posImage = require(`../../public/images/${service.image_path}`);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     router.push({
       pathname: '/services/service/',
       query: { id: service.id }
-    })
+    });
   }
 
   const titleComponent = (<div className={ styles.titleContainer }>

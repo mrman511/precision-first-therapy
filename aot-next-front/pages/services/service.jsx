@@ -1,18 +1,38 @@
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
-import styles from '../../styles/Home.module.scss';
 
 import Header from '../../components/global/Header';
 import Footer from '../../components/global/Footer'
+import styles from '../../styles/Home.module.scss';
 
 import ServiceHeader from '../../components/services/ServiceHeader';
+import ServiceFullPage from '../../components/services/ServiceFullPage';
+import servicePageStyles from '../../styles/ServicePage.module.scss';
+import servicesStyles from '../../styles/Services.module.scss';
 
-import serviceStyles from '../../styles/Services.module.scss';
+import getServiceData from '../../utils/helpers/api';
 
 export default function Service(){
   const router = useRouter();
-  console.log('ROUTER::', router)
+  const [serviceId, setServiceId] = useState(router.query.id);
+  const [currentService, setCurrentService] = useState(undefined);
+
+  useEffect(() => {
+
+    console.log('SEVICEID:::', serviceId, '\n', "CUrrent::: ", currentService)
+    if (router.query.id){
+      if (!serviceId){
+        setServiceId(router.query.id)
+      }
+    }
+
+    if (serviceId && !currentService){
+      console.log('here')
+      getServiceData(serviceId, setCurrentService)
+    }
+  },[serviceId, currentService])
 
   return (
     <>
@@ -33,7 +53,8 @@ export default function Service(){
       <Header styles={ styles } alt={ true }/>
 
       <main className={ styles.main } >
-        <ServiceHeader styles={ serviceStyles }/>
+        {/* <ServiceHeader styles={ servicesStyles }/> */}
+        { currentService && <ServiceFullPage styles={ servicePageStyles } service={ currentService } />}
       </main>
 
       <Footer styles={ styles }/>

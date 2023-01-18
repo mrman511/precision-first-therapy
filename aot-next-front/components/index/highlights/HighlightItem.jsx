@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HighLightItem({ styles, highlight }){
 
-  const posImage = require(`../../../public/images/${highlight.positive_image_path}`);
+  const posImage = require(`../../../public/images/${highlight.image_path}`);
   const negImage = (highlight.display === 'std' ? require(`../../../public/images/${highlight.negative_image_path}`) : '');
 
   return(
