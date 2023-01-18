@@ -3,6 +3,7 @@
 
 .main{
   background-color: white;
+  color: $colour1;
   background-image: url("../public/curve-line-background.svg");
   background-size: auto;
   background-position: top;
@@ -12,7 +13,7 @@
 
   .contactHeaderCard{
     width: 300px;
-    height: 500px;
+    height: 520px;
     margin-top: 1em;
     
     &:nth-child(1){
@@ -35,6 +36,9 @@
 
       h4{
         font-size: 21px;
+      }
+      p{
+        font-size: 1.05em;
       }
     }
   }

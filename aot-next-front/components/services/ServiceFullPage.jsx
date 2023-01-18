@@ -11,7 +11,7 @@ export default function ServiceFullPage({ styles, service }) {
     router.push({
       pathname: '/contact',
       query: {
-        subject: service.title
+        subject: service.title,
       }
     })
   }

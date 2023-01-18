@@ -2,8 +2,8 @@ export default [
   {
     title: 'Ergonomic Assessments',
     id_tag: 'ergo',
-    positive_image_path: "ergonomics-positive.jpg",
-    negative_image_path: "ergonomics-negative.jpg",
+    positive_image_path: "ergonomics.jpg",
+    negative_image_path: "ergonomics.jpg",
     positive_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     negative_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     display: 'std'
@@ -11,8 +11,8 @@ export default [
   {
     title: 'Return To Work Planning',
     id_tag: 'return',
-    positive_image_path: "ergonomics-positive.jpg",
-    negative_image_path: "ergonomics-negative.jpg",
+    positive_image_path: "ergonomics.jpg",
+    negative_image_path: "ergonomics.jpg",
     positive_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     negative_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     display: 'std'
@@ -20,8 +20,8 @@ export default [
   {
     title: 'Concussion Management',
     id_tag: 'concussion',
-    positive_image_path: "ergonomics-positive.jpg",
-    negative_image_path: "ergonomics-negative.jpg",
+    positive_image_path: "ergonomics.jpg",
+    negative_image_path: "ergonomics.jpg",
     positive_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     negative_info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec mi tellus. Aliquam ultrices, risus ac egestas ultrices, arcu sapien varius erat, vitae finibus libero odio ut erat.",
     display: 'std'

@@ -16,7 +16,7 @@ export default [
     ergonomic risk factors to be identified leading to recommendations of adaptations and equipment
     to be formed. Ergonomics truly matters and it’s important to be knowledgeable on how your
     workspace could be impacting you. Some ergonomic risk factors can be easy to identify but
-    others are not as observable – that’s where OTs trained in this area come in.`,
+    others are not as observable – that’s where OTs trained in this ergonomics come in.`,
 
     image_path: "ergonomics.jpg",
     display: 'std'
@@ -48,9 +48,9 @@ export default [
   },
   {
     id: 3,
-    id_tag: 'Ergonomic Assessments',
-    title: undefined,
-    subtitle: '& Cognitive Rehabilitation',
+    id_tag: 'ergonomics',
+    title: 'Ergonomic Assessments',
+    subtitle: undefined,
     subject: 'an Ergonomic Assessment',
     info: `Occupational therapists (OT) experienced in concussion management are skilled at assessing the
     physical and cognitive symptoms of a concussion and analyzing their impact on daily function.
