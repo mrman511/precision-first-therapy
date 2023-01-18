@@ -1,3 +1,5 @@
+import servicesData from './servicesData';
+
 export default [
   {
     title: 'Home',
@@ -10,6 +12,7 @@ export default [
   {
     title: 'Services',
     href: '/services',
+    children: servicesData,
   },
   {
     title: 'Contact',

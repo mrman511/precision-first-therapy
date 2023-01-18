@@ -38,8 +38,6 @@
   background-attachment: fixed;
   background-size: cover;
 
-  
-
   .hero{
     width: 100%;
     @include flexColumnCenter;
@@ -162,6 +160,7 @@
 .main{
   width: 100%;
   @include flexColumnCenter;
+  background-color: white;
 }
 
 //////////////////////////
@@ -216,8 +215,10 @@
     .nav{
       width: 50%;
       height: 100%;
+      position: relative;
       margin-right: 2em;
       display: block;
+      z-index: 2;
       
       ul{
         width: 100%;
@@ -237,12 +238,44 @@
               color: $colour5;
               font-size: 28px;
             }
+
+            .icon{
+              width: 12px;
+              margin-left: 5px;
+            }
           }
         }
 
         .selected{
           color: $colour5;
           font-size: 28px;
+        }
+      }
+
+      .servicesList{
+        max-width: 120%;
+        height: 0px;
+        position: absolute;
+        left: -50px;
+        background-color: $colour1;
+        overflow: hidden;
+        transition: height;
+        
+        ul{
+          width: 100%;
+          min-height: 150px;
+          margin: 1em;
+          @include flexRowCenterBetween;
+          flex-wrap: wrap;
+          font-size: 16px;
+          
+          li{
+            margin: .5em;
+
+            &:hover{
+              font-size: 18px;
+            }
+          }
         }
       }
     }

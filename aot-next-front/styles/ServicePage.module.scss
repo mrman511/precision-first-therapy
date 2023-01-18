@@ -36,6 +36,7 @@
       width: 100%;
       background-image: linear-gradient(rgba(255, 255, 255, 0.63) 5%, white);
       padding-bottom: 2em;
+      color: $colour1;
 
       h2{
         font-size: 48px;
@@ -45,8 +46,13 @@
   }
 
   .infoContainer{
+    color: $colour1;
     grid-area: info;
     font-size: 21px;
+
+    p{
+      text-indent: 2em;
+    }
   }
 
   .clinicInfo{
