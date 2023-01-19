@@ -1,17 +1,11 @@
 @import './variables.scss';
 
-@mixin wireButton($backgroundColour, $colour) {
+@mixin wireButton($BackgroundColour, $colour) {
   .btn{
     box-shadow: 2px 2px 5px -2px black;
     color: $colour;
-    background-color: $backgroundColour;
+    background-color: $BackgroundColour;
     border: 3px solid $colour;
-    
-    &:hover{
-      color: $backgroundColour;
-      background-color: $colour;
-      border: 3px solid $backgroundColour;
-    }
   }
 }
 

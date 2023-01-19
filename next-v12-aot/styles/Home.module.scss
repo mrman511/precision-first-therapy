@@ -5,7 +5,6 @@
   height: 100px;
   @include flexRowCenterBetween;
   background-color: white;
-  // z-index: 10;
 
   .title{
     position: relative;
@@ -232,7 +231,6 @@
 
         a{
           width: 150px;
-          height: 100%;
           @include flexItemCenter;
 
           li{
@@ -255,44 +253,28 @@
       }
 
       .servicesList{
-        width: 100%;
+        max-width: 120%;
+        height: 0px;
         position: absolute;
-        top: 80%;
         left: -50px;
         background-color: $colour1;
         overflow: hidden;
-        border-radius: $mdRadius;
-        // z-index: 11;
+        transition: height;
         
         ul{
           width: 100%;
           min-height: 150px;
-          // margin: 1em;
-          position: relative;
-          display: grid;
-          grid-template: 1fr 1fr / 1fr 1fr 1fr;
-          grid-template-areas: "1 2 3" "4 5 6";
-          // @include flexRowCenterBetween;
-          // flex-wrap: wrap;
+          margin: 1em;
+          @include flexRowCenterBetween;
+          flex-wrap: wrap;
           font-size: 16px;
           
-          a{
-            height: 100%;
-            width: 100%;
-            @include flexItemCenter;
+          li{
+            margin: .5em;
 
-            li{
-              margin: .5em;
-              text-align: center;
-  
-              &:hover{
-                font-size: 16px;
-              }
+            &:hover{
+              font-size: 18px;
             }
-          }
-
-          .selected{
-            font-size: 16px;
           }
         }
       }

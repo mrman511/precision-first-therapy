@@ -11,7 +11,7 @@
   border-bottom-left-radius: $xlRadius;
   border-bottom-right-radius: $xlRadius;
   
-  z-index: 1;
+  z-index: 10;
   
   h2{
     font-family: $cursiveFont;
@@ -25,7 +25,6 @@
   flex-wrap: wrap;
   justify-content: center;
   color: $colour1;
-  z-index: 0;
 
   .serviceCard{
     width: 100%;
