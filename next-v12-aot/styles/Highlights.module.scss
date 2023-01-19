@@ -1,0 +1,188 @@
+@import './variables.scss';
+
+.highlights{
+  position: relative;
+  width: 95vw;
+  display: grid;
+  grid-template: calc((95vw / 5) * 4) / 1fr;
+  grid-auto-rows: calc((95vw / 5) * 4);
+
+  .highlightCard{
+     
+    position: relative;
+    overflow: hidden;
+    border: 5px solid white;
+    
+    .positive{
+      opacity: 0;
+    }
+    
+    .negative{
+      opacity: 1;
+    }
+    
+    .highlightImageContainer{
+      position: absolute;
+      transition: opacity ease-in 1s;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .info{
+      position: absolute;
+      @include flexColumnCenter;
+      justify-content: center;
+      background-color: darken(rgba($colour3, .5), 20%);
+      color: $colour2;
+      opacity: 1;
+      transition: opacity ease-in .5s;
+      z-index: 2;
+      
+      h3{
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      
+      p{
+        width: 80%;
+        margin: 0;
+      }
+    }
+    
+    .shading{
+      width: 100%;
+      background: linear-gradient(45deg, lighten(rgba($colour3, .3), 20%), lighten(rgba($colour3, .5), 0%));
+      z-index: 1;
+      
+      transition: background ease-in 1s;
+    }
+    
+    
+  }
+  
+  .stdCard{
+    
+    .info{
+      width: 50%;
+      height: 100%;
+      left: 50%;
+    }
+  }
+
+  .tallCard{
+
+    .highlightImage{
+      position: relative;
+      height: 200%;
+      top: 0;
+      transition: top ease-in 1s;
+    }
+
+    .info{
+      width: 100%;
+      transform: translateY(-100%);
+      top: 100%;
+      height: 45%;
+    }
+  }
+
+  .wideCard{
+
+    .highlightImage{
+      width: 200%
+    }
+
+    .info{
+      width: 40%;
+      height: 100%;
+      right: 0%;
+    }
+  }
+}
+
+///////////////////
+///MEDIA QUERIES///
+///////////////////
+
+@media only screen and (min-width: 500px){
+  .highlights{
+    width: 100vw;
+    grid-template: repeat(4, calc(((100vw / 2) / 5) * 4)) / 1fr 1fr;
+    grid-template-areas: 
+      "std1 tall"
+      "std2 tall"
+      "wide wide"
+      "std3 std4";
+    
+
+    .stdCard{
+      &:nth-child(1){
+        grid-area: std1;
+      }
+      &:nth-child(2){
+        grid-area: std2;
+      }
+      &:nth-child(3){
+        grid-area: std3;
+      }
+    }
+
+    .cognitive {
+      grid-area: tall;
+      align-self: stretch;
+    }
+
+    .functional {
+      grid-area: std4
+    }
+
+    .wideCard{
+      grid-area: wide;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 1000px){
+
+  .highlights{
+    position: relative;
+    display: grid;
+    grid-template: repeat(3, calc(((100vw / 3) / 5)*4))/ 1fr 1fr 1fr;
+    grid-template-areas: 
+      "tall1 std1 std2"
+      "tall1 std3 tall2"
+      "wide wide tall2";
+
+  
+
+    .stdCard{
+      &:nth-child(1){
+        grid-area: std1;
+      }
+      &:nth-child(2){
+        grid-area: std2;
+      }
+      &:nth-child(3){
+        grid-area: std3;
+      }
+    }
+
+    .tallCard{
+      
+      &:nth-child(5){
+        grid-area: tall1;
+      }
+
+
+      &:nth-child(4){
+        grid-area: tall2;
+      }
+    }
+
+    .wideCard{
+      grid-area: wide;
+    }
+  }
+}
