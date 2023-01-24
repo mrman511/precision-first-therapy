@@ -2,14 +2,14 @@
 @import '../styles/buttons.scss';
 
 .main{
-  background-color: white;
+  margin-top: $headerHeight;
   color: $colour1;
+  background-color: white;
   background-image: url("../public/curve-line-background.svg");
   background-size: auto;
   background-position: top;
 }
 .contactHeader{
-  // width: 300px;
 
   .contactHeaderCard{
     width: 300px;
