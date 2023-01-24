@@ -1,0 +1,169 @@
+@import './variables.scss';
+@import './buttons.scss';
+
+.main{
+  width: 100%;
+}
+
+.employees{
+  margin-top: 150px;
+  margin-bottom: 100px;
+  width: 100%;
+  @include flexColumnCenter;
+  
+  .employee{
+    
+    .employeeBanner{
+      background-color: white;
+      background-image: url("../public/curve-line-background.svg");
+      background-size: contain;
+      background-position: right;
+      width: 100%;
+      display: grid;
+      grid-template: auto / 1fr;
+      grid-auto-rows: auto;
+
+      .profile{
+        width: 100%;
+        @include flexColumnCenter;
+        text-align: center;
+
+        .imageContainer{
+          position: relative;
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+
+      .info{
+        width: 100%;
+        margin-top: 50px;
+        @include flexColumnCenter;
+
+        .hello{
+          margin-right: 10%;
+          
+          h3{
+            font-family: $cursiveFont;
+            font-size: 48px;
+          }
+          h4{
+            font-size: 28px;
+          }
+        }
+
+        .sectionsSelectors{
+          width: 70%;
+          min-width: 300px;
+          margin-top: 25px;
+          @include flexRowCenterEven;
+          flex-wrap: wrap;
+
+          .selector{
+            width: 120px;
+            height: 120px;
+            @include flexItemCenter;
+            font-size: 18px;
+            font-weight: 700;
+            color: $colour2;
+            background-color: $colour1;
+            border-radius: 50%;  
+            
+            &:nth-child(1){
+              color: $colour2;
+              background-color: $colour4;
+            }
+            &:nth-child(3){
+              color: $colour1;
+              background-color: $colour5;
+            }
+          }
+
+        }
+
+      }
+      
+      .bio{
+        width: 90%;
+        padding: 50px 0;
+        justify-self: center;
+        text-indent: 1em;
+        background-color: rgba(255, 255, 255, 0.774);
+      }
+    }
+
+
+    .qualifications{
+      padding: 1em;
+      padding-top: calc($headerHeight + 20px);
+
+      h4{
+        font-family: $cursiveFont;
+        font-size: 48px;
+        // color: $colour1;
+      }
+
+      h5{
+        font-size: 21px;
+        font-weight: 400;
+      }
+
+      ul{
+        list-style: none;
+        padding: 1em;
+
+        li{
+          padding: .5em 0;
+
+          &::before{
+            width: 1em;
+            height: 2px;
+            background-color: $colour1;
+          }
+        }
+      }
+
+      div{
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 750px){
+
+  .employees{
+
+
+    .employee{
+      padding: 5%;
+
+      .employeeBanner{
+        grid-template: auto auto / repeat(5, 1fr);
+        grid-template-areas: 
+        "profile profile info info info" 
+        "bio bio bio bio bio";
+
+        .profile{
+          grid-area: profile;
+        }
+
+        .info {
+          grid-area: info;
+        }
+
+        .bio {
+          grid-area: bio;
+        }
+      }
+
+      .qualifications{
+        margin-left: 10%;
+      }
+
+
+    }
+  }
+}

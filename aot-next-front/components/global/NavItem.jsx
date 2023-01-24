@@ -1,16 +1,21 @@
-import { motion, AnimatePresence } from 'framer-motion';
-
+import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavItem({ routeData, styles, subMenu, toggle, handleOver, handleOut }){
+export default function NavItem({ routeData, styles, subMenu, toggle, handleOver, handleOut, mobile }){
 
   const router = useRouter();
   const selected = router.pathname === routeData.href ? true : false;
   const selectedSub = subMenu && routeData.id === parseInt(router.query.id) ? true : false
-
   const routePath = subMenu ? { pathname: '/services/service', query: { id: routeData.id} } : { pathname: routeData.href };
+
+  const servicesData = (routeData.children && mobile) ? routeData.children.map((item, i) => <NavItem 
+    key={ `ServiceNavListItem${i}` }
+    styles={ styles }
+    routeData={ item }
+    subMenu={ true }
+  />) : false;
 
   const handleClick = (e) =>{
     e.preventDefault();
@@ -19,16 +24,37 @@ export default function NavItem({ routeData, styles, subMenu, toggle, handleOver
 
   
   return(
-    <a className={ selected || selectedSub ? styles.selected : '' } 
-      href={ routePath.pathname } 
-      onClick={(e) => { handleClick(e) }} 
-      onMouseOver={(e) => { toggle ? handleOver(e, toggle) : '' }}
-      onMouseOut={(e) => { toggle ? handleOut(e, toggle) : '' }}
-    >
-      <li>
+ 
+    <li>
+      <a className={ selected || selectedSub ? styles.selected : '' } 
+        href={ routePath.pathname } 
+        onClick={(e) => { handleClick(e) }} 
+        onMouseOver={(e) => { toggle ? handleOver(e, toggle) : '' }}
+        onMouseOut={(e) => { toggle ? handleOut(e, toggle) : '' }}
+      >
         { routeData.title }
-        { routeData.children &&  <FontAwesomeIcon className={ styles.icon } icon={ faChevronDown }/> }
-      </li>
-    </a>
+        { (routeData.children && !mobile) &&  <FontAwesomeIcon className={ styles.icon } icon={ faChevronDown }/> }
+      </a>
+
+      { (routeData.children && mobile) &&  <FontAwesomeIcon 
+        className={ styles.icon } 
+        icon={ faChevronDown } 
+        onClick={(e) => { mobile.toggleService(e) }}
+      /> }
+
+      <AnimatePresence>
+        { (servicesData && mobile.state) && <motion.div 
+          className={ styles.subMenu }
+          initial={{ height: 0 }}
+          animate={{ height: '200px', transition: { duration: .25 } }}
+          exit={{ height: 0 }}
+        >
+            <ul>
+              {servicesData}
+            </ul>
+          </motion.div>}
+      </AnimatePresence>
+    </li>
+
   );
 }
