@@ -10,6 +10,7 @@ export default function ServiceList({ styles }){
   return(
     <div className={ styles.servicesCard }>
       <h3 className={ styles.servicesTitle }>Ariana's Occupational Therapy Services</h3>
+      <h4 >Focus on what MATTERS to you.</h4>
       <ul className={ styles.services }>
         { parsedMenu }
       </ul>

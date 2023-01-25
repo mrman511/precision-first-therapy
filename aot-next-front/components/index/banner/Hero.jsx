@@ -7,7 +7,7 @@ export default function Hero({ styles }){
   return(
     <section className={ styles.hero }>
       <div className={ styles.imageContainer }>
-        <Image  src={ bannerImage } fill alt="AOT services" placeholder="shimmer" />
+        <Image  src={ bannerImage } layout="fill" objectFit="contain" alt="AOT services" placeholder="shimmer" />
       </div>
       
       <Services styles={ styles } />

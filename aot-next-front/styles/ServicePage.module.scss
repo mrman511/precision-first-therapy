@@ -3,35 +3,34 @@
 
 .service{
   width: 100%;
+  min-height: calc(95vh - 100px);
   margin: 2em 0;
+  margin-top: 120px;
   display: grid;
-  grid-template: 300px auto auto auto / 1em 1fr 1em;
+  grid-template: repeat(4, auto) / 1em 1fr 1em;
   grid-template-areas: 
-    '. img .'
+    '. title .'
     '. info .'
     '. clinic .'
     '. aptBtn .';
   grid-row-gap: 2em;
-  
-  .imageContainer{
-    width: 100%;
-    max-width: 400px;
-    position: relative;
-    grid-area: img;
-    justify-self: center;
-    // overflow: hidden;
-  }
-  
+
   .titleContainer{
     width: 100%;
-    max-width: 400px;
-    height: 100%;
-    grid-area: img;
-    justify-self: center;
-    @include flexColumn;
-    justify-content: flex-end;
-    z-index: 1;
-    
+    height: auto;
+    grid-area: title;
+    position: relative;
+    @include flexColumnCenter;
+
+    .imageContainer{
+      width: 100%;
+      // max-width: 500px;
+      height: 60vw;
+      max-height: 400px;
+      position: relative;
+      // overflow: hidden;
+    }
+  
     .title{
       width: 100%;
       background-image: linear-gradient(rgba(255, 255, 255, 0.63) 5%, white);
@@ -44,6 +43,7 @@
       }
     }
   }
+  
 
   .infoContainer{
     color: $colour1;
@@ -68,12 +68,12 @@
 }
 
 
-@media only screen and (min-width: 725px){
+@media only screen and (min-width: 800px){
 
   .service{
-    grid-template: 300px auto auto / 1em 400px 1fr 1em;
+    grid-template: auto auto auto / 1em 400px 1fr 1em;
     grid-template-areas: 
-      ". img info ."
+      ". title info ."
       '. clinic clinic .'
       '. aptBtn aptBtn .'
   }

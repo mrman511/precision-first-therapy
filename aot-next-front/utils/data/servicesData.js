@@ -1,6 +1,7 @@
 export default [
   {
     id: 1,
+    route_path: '/services/service',
     id_tag: 'ergonomics',
     title: 'Ergonomics Assessments',
     subtitle: undefined,
@@ -23,6 +24,7 @@ export default [
   },
   {
     id: 2,
+    route_path: '/services/service',
     title: 'Functional Home Assessments',
     subtitle: '& Equipment Prescription',
     id_tag: 'functional',
@@ -48,10 +50,11 @@ export default [
   },
   {
     id: 3,
-    id_tag: 'ergonomics',
-    title: 'Ergonomic Assessments',
-    subtitle: undefined,
-    subject: 'an Ergonomic Assessment',
+    route_path: '/services/service',
+    id_tag: 'concussion',
+    title: 'Concussion Management',
+    subtitle: '& Cognitive Rehabilitaiion',
+    subject: 'Concussion Managment & Cognitive Rehabilitaion',
     info: `Occupational therapists (OT) experienced in concussion management are skilled at assessing the
     physical and cognitive symptoms of a concussion and analyzing their impact on daily function.
     A concussion is a mild traumatic brain injury (mTBI) and ultimately results in impairment of
@@ -75,27 +78,44 @@ export default [
   },
   {
     id: 4,
-    title: 'Functional Home Assessments',
-    subtitle: '& Equipment Prescription',
-    id_tag: 'functional',
-    subject: 'a Functional Home Assessment',
-    info: `Functional home assessments involve an occupational therapist (OT) assessing an individual’s
-    ability to engage in their basic and instrumental activities of daily living (ADL), which can
-    include completing a load of laundry, making the bed, food preparation, transferring in/out of
-    your bathtub or bed, and dressing. OTs will take into consideration the physical and cognitive
-    abilities of the person to help with determining current level of independence and need for home
-    making assistance and/or equipment.`,
+    route_path: '/services/service',
+    title: 'Return to Work Planning',
+    subtitle: undefined,
+    id_tag: 'return',
+    subject: 'Return to Work Planning',
+    info: `Occupational therapists (OT) use their knowledge and training to develop and implement return
+    to work plans after an injury and/or illness. At AOT Services, the process starts with completing
+    an initial evaluation of your functional abilities, which will help with determining barriers
+    towards engagement of job demands. A personalized return to work plan is then created, setting
+    achievable goals to help with facilitating symptom management. We also complete job site visits
+    as they allow for us to assess the physical, cognitive, &amp; emotional demands of your position, as
+    well as coordinate with your employer to determine workplace supports such as modified or light
+    duties. We will continuously evaluate your abilities for return to work and provide strategies to
+    proactively manage ongoing barriers.`,
     
-    clinic_info: `At AOT Services, we focus on ensuring safety and independence within the home environment
-    in order to optimize quality of living. Our assessments are individualized and geared towards
-    evaluating the unique needs of the individual. They will include standardized and non-
-    standardized assessments to assist with determining home environment accessibility and barriers
-    towards functional performance. We will also coordinate with vendors for installation of
-    equipment needs and can provide follow-up treatment sessions for strategies to improve overall
-    function.`,
-
-    image_path: "cognitive-rehab.jpg",
-    negative_image_path: null,
-    display: 'tall',
+    clinic_info: '',
+    image_path: "ergonomics.jpg",
+    display: 'std'
+  },
+  {
+    id: 5,
+    route_path: '/services/service',
+    title: 'Anxiety-Focused Treatments',
+    subtitle: undefined,
+    id_tag: 'anxiety',
+    subject: 'Anxiety-Focused Treatments',
+    info: `Occupational therapist can provide a unique perspective to helping those experiencing anxiety,
+    as they are trained to look at the person, environment, and occupation in order to better
+    understand ways to help. Anxiety can be distressing and hard to manage, especially when we are
+    experiencing higher levels of stress in our lives. It can impact our ability to engage in our daily
+    activities and often make us feel very isolated. At AOT services, we are dedicated to helping
+    those experiencing anxiety and will create an individualized program that will educate you on
+    adaptive coping strategies, recognizing and addressing unhelpful thinking patterns, teach stress
+    management techniques, and learning how to build a routine that will include improving sleep
+    quality.`,
+    
+    clinic_info: '',
+    image_path: "ergonomics.jpg",
+    display: 'std'
   },
 ]

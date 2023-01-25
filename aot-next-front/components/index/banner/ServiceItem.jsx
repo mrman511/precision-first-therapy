@@ -7,7 +7,7 @@ export default function ServiceItem({ styles, item}){
   return(
     <li className={ styles.serviceItem }>
       <div className={ styles.imageContainer }>
-        <Image src={ leafImage } layout="fill" objectFit="contain"/>
+        <Image src={ leafImage } layout="fill" objectFit="contain" alt={`hero-service-${item}`}/>
       </div>
       { item }
     </li>

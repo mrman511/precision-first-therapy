@@ -13,6 +13,7 @@ export default [
     title: 'Services',
     href: '/services',
     children: servicesData,
+    childPath: '/service'
   },
   {
     title: 'Contact',

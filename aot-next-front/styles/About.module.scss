@@ -6,23 +6,21 @@
 }
 
 .employees{
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 100px;
   width: 100%;
   @include flexColumnCenter;
+  color: black;
   
   .employee{
     
     .employeeBanner{
-      background-color: white;
-      background-image: url("../public/curve-line-background.svg");
-      background-size: contain;
-      background-position: right;
       width: 100%;
       display: grid;
       grid-template: auto / 1fr;
       grid-auto-rows: auto;
-
+      box-shadow: $LBLowShadow;
+      
       .profile{
         width: 100%;
         @include flexColumnCenter;
@@ -47,7 +45,7 @@
           
           h3{
             font-family: $cursiveFont;
-            font-size: 48px;
+            font-size: 68px;
           }
           h4{
             font-size: 28px;
@@ -64,6 +62,7 @@
           .selector{
             width: 120px;
             height: 120px;
+            margin: 0 .5em;
             @include flexItemCenter;
             font-size: 18px;
             font-weight: 700;
@@ -76,7 +75,7 @@
               background-color: $colour4;
             }
             &:nth-child(3){
-              color: $colour1;
+              color: $colour2;
               background-color: $colour5;
             }
           }
@@ -90,7 +89,6 @@
         padding: 50px 0;
         justify-self: center;
         text-indent: 1em;
-        background-color: rgba(255, 255, 255, 0.774);
       }
     }
 
@@ -98,6 +96,8 @@
     .qualifications{
       padding: 1em;
       padding-top: calc($headerHeight + 20px);
+      // box-shadow: $LBLowShadow;
+
 
       h4{
         font-family: $cursiveFont;
@@ -132,6 +132,26 @@
   }
 }
 
+@media only screen and (min-width: 450px){
+  
+  .employees{
+
+    .employee{
+
+      .employeeBanner{
+
+        .profile{
+
+          .imageContainer{
+            width: 350px;
+            height: 350px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 750px){
 
   .employees{
@@ -144,14 +164,19 @@
         grid-template: auto auto / repeat(5, 1fr);
         grid-template-areas: 
         "profile profile info info info" 
-        "bio bio bio bio bio";
+        "profile profile bio bio bio";
 
         .profile{
           grid-area: profile;
+          align-self: center;
         }
 
         .info {
+          padding: 0;
+          margin: 0;
+          margin-left: 10%;
           grid-area: info;
+          align-items: start;
         }
 
         .bio {
