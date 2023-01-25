@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 
 export default function ServiceFullPage({ styles, service }) {
 
+  // console.log('SERVICEFULLPAGE::: ', service)
+
   const router = useRouter();
   const image = require(`../../public/images/service-page/${ service.image_path }`);
 
@@ -18,16 +20,16 @@ export default function ServiceFullPage({ styles, service }) {
 
   return(
     <section className={ styles.service }>
-      <div className={ styles.imageContainer }>
-        <Image src={ image } fill alt={ service.title } />
-      </div>
 
-      <div className={ styles.titleContainer }>
+      <article className={ styles.titleContainer }>
+        <div className={ styles.imageContainer }>
+          <Image src={ image } layout='fill' objectFit="contain" alt={ service.title } />
+        </div>
         <div className={ styles.title }>
           <h2 >{ service.title }</h2>
           { service.subtitle && <h3>{ service.subtitle }</h3> }
         </div>
-      </div>
+      </article>
 
       <div className={ styles.infoContainer }>
         <p>{ service.info }</p>
