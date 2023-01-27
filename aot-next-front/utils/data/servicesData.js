@@ -11,16 +11,13 @@ export default [
     concepts found in biomechanics, anthropometry, design, and psychology to create a healthier
     interaction of the workspace to the person. It can promote higher efficiency and productivity
     because it helps to reduce the overall discomfort of the user interaction with the space.`,
-
     clinic_info: `At AOT Services, our ergonomic assessment will consist of several parts: you (i.e., the person),
     your workspace (i.e., the environment), and your job demands (i.e., occupation). This allows for
     ergonomic risk factors to be identified leading to recommendations of adaptations and equipment
     to be formed. Ergonomics truly matters and it’s important to be knowledgeable on how your
     workspace could be impacting you. Some ergonomic risk factors can be easy to identify but
     others are not as observable – that’s where OTs trained in this ergonomics come in.`,
-
     image_path: "ergonomics.jpg",
-    display: 'std'
   },
   {
     id: 2,
@@ -45,8 +42,6 @@ export default [
     function.`,
 
     image_path: "cognitive-rehab.jpg",
-    negative_image_path: null,
-    display: 'tall',
   },
   {
     id: 3,
@@ -74,7 +69,6 @@ export default [
     manner. Click here to contact us about making a referral to our clinic.`,
 
     image_path: "ergonomics.jpg",
-    display: 'std'
   },
   {
     id: 4,
@@ -95,7 +89,6 @@ export default [
     
     clinic_info: '',
     image_path: "ergonomics.jpg",
-    display: 'std'
   },
   {
     id: 5,
@@ -116,6 +109,5 @@ export default [
     
     clinic_info: '',
     image_path: "ergonomics.jpg",
-    display: 'std'
   },
 ]
