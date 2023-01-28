@@ -1,3 +1,6 @@
+const lorem = "lorem ipsum telay"
+const list = [lorem, lorem, lorem, lorem, lorem] 
+
 export default [
   {
     id: 1,
@@ -18,6 +21,7 @@ export default [
     to be formed. Ergonomics truly matters and it’s important to be knowledgeable on how your
     workspace could be impacting you. Some ergonomic risk factors can be easy to identify but
     others are not as observable – that’s where OTs trained in this ergonomics come in.`,
+    list: list,
   },
   {
     id: 2,
@@ -40,6 +44,7 @@ export default [
     towards functional performance. We will also coordinate with vendors for installation of
     equipment needs and can provide follow-up treatment sessions for strategies to improve overall
     function.`,
+    list: list,
   },
   {
     id: 3,
@@ -65,6 +70,7 @@ export default [
     services for concussion management by using evidence-based practice resources, expert
     consensus, analyzing research literature, as well as practicing in a holistic and client-centred
     manner. Click here to contact us about making a referral to our clinic.`,
+    list: list,
   },
   {
     id: 4,
@@ -84,6 +90,7 @@ export default [
     duties. We will continuously evaluate your abilities for return to work and provide strategies to
     proactively manage ongoing barriers.`,
     clinic_info: '',
+    list: list,
   },
   {
     id: 5,
@@ -103,5 +110,6 @@ export default [
     management techniques, and learning how to build a routine that will include improving sleep
     quality.`,
     clinic_info: '',
+    list: list,
   },
 ]

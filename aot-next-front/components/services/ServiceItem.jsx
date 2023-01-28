@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo, faEnvelope  } from "@fortawesome/free-solid-svg-icons";
+
 export default function ServiceItem({ styles, service, index }){
 
   const router = useRouter();
-  const posImage = require(`../../public/images/${service.image_path}`);
+  const image = require(`../../public/images/services/${service.image_path}`);
 
-  const handleSubmit = (e) => {
+  const handleClickInfo = (e) => {
     e.preventDefault();
     router.push({
       pathname: '/services/service/',
@@ -14,27 +17,49 @@ export default function ServiceItem({ styles, service, index }){
     });
   }
 
-  const titleComponent = (<div className={ styles.titleContainer }>
-    <h2 className={ styles.title }>{ service.title }</h2>
-    { service.subtitle && <h3 className={ styles.subTitle }>{ service.subtitle }</h3> }
-  </div>)
+  const handleClickMail = (e) => {
+    e.preventDefault();
+    router.push({
+      pathname: '/contact',
+      query: {
+        subject: service.title,
+      },
+      hash: "contact-form"
+    })
+  }
+
+  const listItems = service.list.map((item, i) => 
+    <li key={ `${service.id_tag}-listitem-${i}` }>
+      { item }
+    </li>
+  )
 
   return(
     <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 !== 0 ? styles.alt : '' )].join(' ')}>
-      <div className={ styles.serviceImageContainer }>
-        <Image src={ posImage } alt={ service.title } fill placeholder="blur" />
+      <div className={ styles.titleContainer }>
+        <div className={ styles.imageContainer }>
+          <Image src={ image } alt={ service.title } fill />
+        </div>
+
+        <div className={ styles.title }>
+          <h2>{ service.title }</h2>
+        </div>
+
       </div>
 
-      {/* { service.display === 'std' && <div className={ [styles.highlightImage, styles.negative].join(' ') }>
-        <Image src={ negImage } alt={ service.title } layout="fill" objectFit="contain" />
-      </div>} */}
+      <ul>
+        { listItems }
+      </ul>
 
-      <div className={ [ styles.info, styles.regInfo ].join(' ') }>
-        { titleComponent }
-        <p>{ service.info }</p>
-        <button className={ [styles.btn, styles.btnLg].join(' ') } onClick={(e) => { handleSubmit(e) }}>Learn About Our Approach</button>
+      <div className={ styles.routes }>
+        <a href="/services/service" onClick={(e) => { handleClickInfo(e) }}> 
+          <FontAwesomeIcon icon={ faCircleInfo } className={ styles.icon }/>
+        </a>
+
+        <a href="/contact" onClick={(e) => { handleClickMail(e) }}>
+          <FontAwesomeIcon icon={ faEnvelope } className={ styles.icon }/>
+        </a>
       </div>
-
     </article>
   );
 

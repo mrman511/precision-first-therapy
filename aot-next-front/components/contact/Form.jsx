@@ -7,7 +7,7 @@ export default function Form(props) {
   const { styles, setName, setEmail, setMessage, subject, setSubject, form, submitForm, handleChange, error } = props;
 
   return (
-    <article className={ styles.formContainer }>
+    <article className={ styles.formContainer } id="contact-form">
       <div className={ [styles.contactMessage, styles.gridItem].join(' ') }>
         <h3>Reach Out</h3>
         <p className={ styles.contactLine }>Contact us to book an appointment, get more information on our services, or ask any other questions.</p>
