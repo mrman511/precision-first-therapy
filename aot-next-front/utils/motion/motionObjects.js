@@ -1,116 +1,46 @@
 
-
-const mcbutton = {
-  closedToOpen: {
-    exit: {display: 'none'},
-  },
+const top = {
   openToClosed: {
-    initial: {},
-    animate: {},
-    exit: {display: 'none'},
+    initial: { top: '40px', rotate: 45, y: '-50%' },
+    animate: { top: "10px", rotate: 0, y: '-50%'},
+    exit: {}
   },
-};
-
-const mcbuttonTop = {
   closedToOpen: {
-    initial: { top: '8px' },
-    animate: {
-      top: '40px',
-      rotate: 45,
-      // transition: {
-      //   duration: .5,
-      //   delay: .2
-      // }
-    },
-    exit: {},
-  },
-  openToClosed: {
-    initial: {
-      top: '40px',
-      rotate: 45,
-    },
-    animate: {
-        top: "8px",
-        rotate: 0,
-        // transition: {
-        //   duration: .5,
-        //   delay: .2
-        // }
-    },
-    exit: {},
-  },
-};
+    initial: { top: "10px", rotate: 0, y: '-50%' },
+    animate: { top: "40px", rotate: 45, y: '-50%' },
+    exit: {}
+  }
+}
 
-const mcbuttonMiddle = {
-  closedToOpen: {
-    initial: {
-      top: '40px',
-      width: "70%",
-    },
-    animate: {
-      width: 0,
-      opactity: 0,
-      // transition: {
-      //   duration: .5,
-      //   delay: .2
-      // }
-    },
-    exit: {},
-  },
+const middle = {
   openToClosed: {
-    initial: {
-      top: '40px',
-      width: 0,
-      opactity: .0,
-    },
-    animate: {
-      opacity: 1,
-      width: '70%',
-      // transition: {
-      //   duration: .5,
-      //   delay: .2
-      // }
-    },
-    exit: {},
+    initial: { top: '40px', opacity: 0, width: 0, y: '-50%' },
+    animate: { top: "40px", opacity: 1, width: "70%", y: '-50%' },
+    exit: {}
   },
-};
+  closedToOpen: {
+    initial: { top: "40px", opacity: 1, width: '70%', y: '-50%' },
+    animate: { top: "40px", opacity: 0, width: 0, y: '-50%' },
+    exit: {}
+  }
+}
 
-const mcbuttonBottom = {
-  closedToOpen: {
-    initial: {
-      top: '70px',
-      rotate: 0,
-    },
-    animate: {
-      top: '40px',
-      rotate: -45,
-      // transition: {
-      //   duration: .5,
-      //   delay: .2
-      // }
-    },
-    exit: {},
-  },
+const bottom = {
   openToClosed: {
-    initial: {
-      top: '40px',
-      rotate: -45,
-    },
-    animate: {
-      top: '70px',
-      rotate: 0,
-      // transition: {
-      //   duration: .5,
-      //   delay: .2
-      // }
-    },
-    exit: {},
+    initial: { top: '40px', rotate: -45, y: '-50%' },
+    animate: { top: "70px", rotate: 0, y: '-50%' },
+    exit: {}
   },
-};
+  closedToOpen: {
+    initial: { top: "70px", rotate: 0, y: '-50%' },
+    animate: { top: "40px", rotate: -45, y: '-50%' },
+    exit: {}
+  }
+}
 
 module.exports = {
-  mcbutton,
-  mcbuttonTop,
-  mcbuttonMiddle,
-  mcbuttonBottom,
+  // mcbutton,
+  top,
+  middle,
+  bottom,
 }
