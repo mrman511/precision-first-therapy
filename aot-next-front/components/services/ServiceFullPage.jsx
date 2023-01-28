@@ -6,7 +6,7 @@ export default function ServiceFullPage({ styles, service }) {
   // console.log('SERVICEFULLPAGE::: ', service)
 
   const router = useRouter();
-  const image = require(`../../public/images/service-page/${ service.image_path }`);
+  const image = require(`../../public/images/services/${ service.image_path }`);
 
   const handleSubmit = (e) => {
     e.preventDefault
@@ -21,15 +21,16 @@ export default function ServiceFullPage({ styles, service }) {
   return(
     <section className={ styles.service }>
 
-      <article className={ styles.titleContainer }>
-        <div className={ styles.imageContainer }>
-          <Image src={ image } layout='fill' objectFit="contain" alt={ service.title } />
+      <div className={ styles.imageContainer }>
+        <div>
+          <Image src={ image } fill alt={ service.title } />
         </div>
-        <div className={ styles.title }>
-          <h2 >{ service.title }</h2>
-          { service.subtitle && <h3>{ service.subtitle }</h3> }
-        </div>
-      </article>
+      </div>
+
+      <div className={ styles.title }>
+        <h2 >{ service.title }</h2>
+        {/* { service.subtitle && <h3>{ service.subtitle }</h3> } */}
+      </div>
 
       <div className={ styles.infoContainer }>
         <p>{ service.info }</p>
