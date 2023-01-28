@@ -14,7 +14,8 @@ export default function ServiceFullPage({ styles, service }) {
       pathname: '/contact',
       query: {
         subject: service.title,
-      }
+      },
+      hash: "contact-form"
     })
   }
 
