@@ -2,79 +2,78 @@
 @import './buttons.scss';
 
 .service{
-  width: 100%;
+  width: 90vw;
+  max-width: 1200px;
   min-height: calc(95vh - 100px);
   margin: 2em 0;
+  padding: 1em 0;
   margin-top: 120px;
-  display: grid;
-  grid-template: repeat(4, auto) / 1em 1fr 1em;
-  grid-template-areas: 
-    '. title .'
-    '. info .'
-    '. clinic .'
-    '. aptBtn .';
-  grid-row-gap: 2em;
-
-  .titleContainer{
-    width: 100%;
-    height: auto;
-    grid-area: title;
-    position: relative;
-    @include flexColumnCenter;
-
-    .imageContainer{
-      width: 100%;
-      // max-width: 500px;
-      height: 60vw;
-      max-height: 400px;
-      position: relative;
-      // overflow: hidden;
-    }
+  @include flexColumnCenter;
+  box-shadow: $LBLowShadow;
+  overflow: hidden;
   
-    .title{
-      width: 100%;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.63) 5%, white);
-      padding-bottom: 2em;
-      color: $colour1;
-
-      h2{
-        font-size: 48px;
-        font-family: $cursiveFont;
-      }
-    }
+  .imageContainer{
+    width: 1200px;
+    height: 300px;
+    position: relative;
+    // transform: translateX(-50%);
+    // left: 50%;
   }
   
+  .title{
+    width: 90vw;
+    max-width: 1200px;
+    position: absolute;
+    @include flexItemCenter;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 300px;
+    background-color: rgba($colour4, 0.75);
+    
+    h2 {
+      color: white;
+      font-family: $cursiveFont;
+      font-size: 38px;
+    }
+  }
 
   .infoContainer{
-    color: $colour1;
-    grid-area: info;
-    font-size: 21px;
-
-    p{
-      text-indent: 2em;
-    }
-  }
-
-  .clinicInfo{
-    grid-area: clinic;
+    width: 100%;
+    padding: .5em;
+    text-indent: 1em;
   }
 
   @include wireButton(white, $colour1);
 
-  .btn{
-    grid-area: aptBtn;
-    justify-self: center;
+  .btn {
+    max-width: 500px;
+    font-size: 18 px;
   }
 }
 
+@media only screen and (min-width: 500px){
+
+  .service{
+
+    .title{
+
+      h2{
+        font-size: 48px;
+      }
+    }
+  }
+}
 
 @media only screen and (min-width: 800px){
 
   .service{
-    grid-template: auto auto auto / 1em 400px 1fr 1em;
-    grid-template-areas: 
-      ". title info ."
-      '. clinic clinic .'
-      '. aptBtn aptBtn .'
+
+    p{
+      font-size: 18px;
+    }
+
+    .btn{
+      font-size: 21px;
+    }
   }
 }

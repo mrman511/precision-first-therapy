@@ -12,7 +12,7 @@ import ServiceFullPage from '../../components/services/ServiceFullPage';
 import servicePageStyles from '../../styles/ServicePage.module.scss';
 import servicesStyles from '../../styles/Services.module.scss';
 
-import getServiceData from '../../utils/helpers/api';
+import { getServiceData } from '../../utils/helpers/api';
 
 export default function Service(){
   const router = useRouter();
@@ -20,7 +20,6 @@ export default function Service(){
   const [currentService, setCurrentService] = useState(undefined);
 
   useEffect(() => {
-
     if (+router.query.id !== serviceId){
       setServiceId(+router.query.id);
     }

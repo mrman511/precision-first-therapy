@@ -1,10 +1,12 @@
 import { motion, AnimatePresence, useCycle } from "framer-motion";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 export default function HighLightItem({ styles, highlight, i }){
 
+  const router = useRouter();
   const [showLink, toggleShowLink] = useCycle(false, true);
   const [hover, toggleHover]= useCycle(false, true);
+
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -23,8 +25,12 @@ export default function HighLightItem({ styles, highlight, i }){
     showLink ? toggleShowLink(): '';
   }
 
-  const handleRouting = (id) => {
-    Router.push({ pathname: 'services/service', query: { id: HighLightItem.id } })
+  const handleRouting = () => {
+    const path = { pathname: highlight.route_path };
+    if (highlight.id_tag !== 'aot' ){
+      path.query = { id: highlight.id };
+    }
+    router.push(path);
   }
 
   const title = (
@@ -50,7 +56,9 @@ export default function HighLightItem({ styles, highlight, i }){
       exit={{ left: '-100%', transition: { duration: .75 } }}
     >
       <button 
-        className={ [styles.btn, styles.btnLg].join(' ') }>
+        className={ [styles.btn, styles.btnLg].join(' ') }
+        onClick={ () => { handleRouting() } }
+      >
           Details
       </button>
     </motion.div>
