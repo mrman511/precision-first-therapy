@@ -7,7 +7,7 @@ export default function Mcbutton({ styles, menuOpen, toggleMenuOpen }){
     <div className={ styles.mcbuttonContainer } onClick={ () => { toggleMenuOpen() } }>
       <AnimatePresence>
         <MotionConfig transition={{ duration: .5, type: "spring", stiffness: 200  }}>
-          { menuOpen && <motion.div 
+          { !menuOpen && <motion.div 
             className={ styles.mcbutton }
             key="mcButtonClosed"
             initial="initial"
@@ -19,7 +19,7 @@ export default function Mcbutton({ styles, menuOpen, toggleMenuOpen }){
             <motion.b variants={ bottom.openToClosed }></motion.b>
           </motion.div> }
 
-          { !menuOpen && <motion.div 
+          { menuOpen && <motion.div 
             className={ styles.mcbutton }
             key="mcButtonOpen"
             initial="initial"

@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './keyframes.scss';
 
 .header{
   width: 100%;
@@ -41,15 +42,20 @@
       font-size: 28px;
       width: auto;
       margin: 10%;
-      display: grid;
-      grid-template: auto / 1fr;
-      grid-auto-rows: auto;
+      @include flexColumn;
       list-style: none;
-      justify-content: space-between;
 
       li{
         min-height: 75px;
         line-height: 1.1em;
+
+        &:hover{
+          color: $colour5;
+
+          li{
+            color: $colour2
+          }
+        }
       }
 
       .subMenu{
@@ -57,16 +63,20 @@
 
         ul{
           height: auto;
-          min-height: 200px;
+          min-height: 250px;
           margin: 0;
           margin-left: .5em;
           font-size: 21px;
-          padding-bottom: 25px;
+          padding: 16px 0;
   
           li{
             @include flexColumn;
             justify-content: center;
             min-height: 45px;
+
+            :hover{
+              color: $colour5;
+            }
           }
         }
       }
@@ -105,11 +115,12 @@
 
   .hero{
     width: 100%;
+    padding-top: 2em;
     @include flexColumnCenter;
 
     .imageContainer{
-      width: 200px;
-      height: 125vw;
+      width: 300px;
+      height: 500px;
       max-height: 600px;
       position: relative;
       @include flexColumnCenter;
@@ -117,6 +128,7 @@
     }
 
     .servicesCard {
+      margin-top: 1em;
       @include flexColumnCenter;
       color: $colour2;
       
@@ -132,25 +144,49 @@
       }
     
       .services{
-        width: 215px;
-        @include flexColumnCenterEven;
+        // width: 215px;
+        @include flexColumn;
         list-style: none;
         margin-bottom: 2em;
         
         .serviceItem{
-          width: 250px;
+          width: max-content;
+          max-height: 30px;
+          // padding-left: 35px;
           position: relative;
-          @include flexRowCenter;
+          display: flex;
           margin: .5em;
           font-size: 1.15em;
-    
-          .imageContainer{
-            position: relative;
-            width: 1em;
-            height: .75em;
-            margin-right: .5em;
+
+          a{
+            width: fit-content;
+            z-index: 1;
+            
+            &:hover{
+              color: $colour5;
+            }
+
+            p{
+              margin-left: 35px;
+            } 
           }
     
+          .imageContainer{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            
+            .svgPath{
+              fill: rgba(255, 255, 255, 0);
+              stroke: $colour5;
+              stroke-width: 2px;
+              // stroke-miterlimit: 10;
+              stroke-dashoffset: 0;
+              stroke-dasharray: 410;
+              animation: draw 1s reverse ease-out;
+            }
+          }
         }
       }
     }
@@ -180,34 +216,6 @@
       position: absolute;
       background-color: $colour3;
       transform: translateY(-50%);
-    }
-  }
-}
-
-.blurb{
-  width: 100%;
-  height: 300px;
-  @include flexItemCenter;
-  color: $colour1;
-  background-color: white;
-  
-  .blurbContainer{
-    width: 90%;
-    height: 75%;
-    @include flexColumn;
-    // border-top: 2px solid $colour1;
-    border-bottom: 2px solid $colour1;
-
-    h3{
-      margin-left: 10%;
-      font-size: 48px;
-      font-family: $cursiveFont;
-    }
-    
-    p{
-      width: 80%;
-      font-size: 21px;
-      text-align: left;
     }
   }
 }
@@ -286,6 +294,11 @@
         height: 100%;
       }
     }
+  }
+
+  .blurb{
+    width: 40%;
+    max-width: 450px;
   }
 
   .footer{

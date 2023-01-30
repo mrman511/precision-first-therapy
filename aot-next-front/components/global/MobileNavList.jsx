@@ -27,7 +27,7 @@ export default function MobileNavList({ styles }){
   return(
     <motion.article className={ styles.mobileNav }
       initial={{ top: '100vh' }}
-      animate={{ top: [ '600px', '400px', '200px', '80px', '110px', '100px'], transition: { duration: .5 } }}
+      animate={{ top: '100px', transition: { duration: .5 } }}
       exit={{ top: '100vh', transition: {duration: .25}}}
     >
       <ul>

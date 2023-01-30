@@ -28,7 +28,7 @@
     transform: translateX(-50%);
     left: 50%;
     bottom: 300px;
-    background-color: rgba($colour4, 0.75);
+    background-color: $ribbonColour;
     
     h2 {
       color: white;
@@ -39,6 +39,7 @@
 
   .infoContainer{
     width: 100%;
+    margin-top: 1em;
     padding: .5em;
     text-indent: 1em;
   }

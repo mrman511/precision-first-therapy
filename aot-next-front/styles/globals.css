@@ -93,6 +93,10 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  cursor: pointer;
+}
+
 .imageContainer{
   position: relative;
 }

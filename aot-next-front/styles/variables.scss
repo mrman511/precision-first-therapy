@@ -11,7 +11,7 @@ $colour4: #553E4C;
 $colour5: #876E7D;
 
 //Ribon
-$ribonColor: rgba($colour4, .75);
+$ribbonColour: rgba($colour4, .75);
 
 ///////////////////////
 /////BORDER RADIUS/////
@@ -24,9 +24,9 @@ $xlRadius: 28px;
 
 //SHADING
 
-$DBLShadow: 3px 3px 10px -5px $colour3;
+$DBLShadow: 3px 3px 10px -5px $colour2;
 $DBDeepShadow: 3px 3px 10px $colour3;
-$LBLowShadow: 3px 3px 10px -5px darken($colour3, 20%);
+$LBLowShadow: 5px 5px 5px -5px darken($colour3, 20%);
 $LBDeepShadow: 3px 3px 10px darken($colour3, 20%);
 
 //fonts
