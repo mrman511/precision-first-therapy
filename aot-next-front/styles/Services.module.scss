@@ -52,12 +52,11 @@
         padding: .5em 0;
         position: relative;
         transform: translateY(-50%);
-        // top: 300px;
         @include flexItemCenter;
         font-size: 21px;
         font-family: $cursiveFont;
         color: white;
-        background-color: $ribonColor;
+        background-color: $ribbonColour;
       }
     }
     

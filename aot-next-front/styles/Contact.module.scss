@@ -5,24 +5,16 @@
   margin-top: $headerHeight;
   color: $colour1;
   background-color: white;
-  background-image: url("../public/curve-line-background.svg");
-  background-size: auto;
-  background-position: top;
+  // background-image: url("../public/curve-line-background.svg");
+  // background-size: auto;
+  // background-position: top;
 }
 .contactHeader{
 
   .contactHeaderCard{
     width: 300px;
-    height: 520px;
-    margin-top: 1em;
-    
-    &:nth-child(1){
-      border-bottom: 1px solid $colour2;
-      margin-bottom: .5em;
-    }
-    &:nth-child(2){
-      border-top: 1px solid $colour2;
-    }
+    margin: 1em;
+    box-shadow: $LBLowShadow;
     
     .imageContainer{
       height: 300px;
@@ -30,15 +22,26 @@
     }
 
     .info{
-      padding-left: 1em;
-      padding-right: 1em;
+      // padding-left: 1em;
+      // padding-right: 1em;
       background-image: linear-gradient(90deg, white 30%, rgba(255, 255, 255, 0));
 
-      h4{
-        font-size: 21px;
+      .titleContainer{
+        width: 100%;
+        margin-bottom: .5em;
+        color: white;
+        background-color: $ribbonColour;
+        
+        h4{
+          font-size: 21px;
+          margin: .5em 1em;
+          margin-right: 0; 
+        }
       }
+
       p{
         font-size: 1.05em;
+        margin: 1em;
       }
     }
   }
@@ -57,6 +60,7 @@
     @include flexColumnCenter;
   }
 }
+
 .formContainer{
   width: 90%;
   margin-bottom: 3em;
@@ -70,8 +74,14 @@
   box-shadow: $LBDeepShadow;
     
   .gridItem{
-    @include fill;
+    // @include fill;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     position: relative;
+    justify-self: center;
+    align-self: center;
+    box-shadow: $LBLowShadow;
+
     p{
       font-size: 21px;
     }
@@ -85,9 +95,9 @@
     background-image: linear-gradient(90deg, white 30%, rgba(255, 255, 255, 0));
   
     h3{
-      font-size: 42px;
+      font-size: 48px;
       font-family: $cursiveFont;
-      font-weight: 600;
+      // font-weight: 600;
     }
     p{
       max-width: 540px;
@@ -175,26 +185,14 @@
     display: flex;
 
     .contactHeaderCard{
-      
-      &:nth-child(1){
-        border-bottom: none;
-        border-right: 1px solid $colour2;
-        margin-bottom: none;
-        margin-right: .25em;
-      }
-      &:nth-child(2){
-        border-top: none;
-        border-left: 1px solid $colour2;
-        margin-left: .25em;
-      }
-    }
 
+    }
   }
 }
 
 @media only screen and (min-width: 850px){
   .formContainer{
-    grid-template: 350px 350px 350px / 3fr 2fr;
+    grid-template: 250px 350px 350px / 3fr 2fr;
     grid-template-areas: 
       "message message"
       "form contact"
@@ -203,11 +201,11 @@
     .contactMessage{
   
       h3{
-        font-size: 80px;
+        font-size: 48px;
       }
   
       p{
-        font-size: 31px;
+        font-size: 21px;
       }
     }
   }

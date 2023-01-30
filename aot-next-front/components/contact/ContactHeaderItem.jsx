@@ -10,7 +10,9 @@ export default function ContactHeaderItem({ styles, item }){
         <Image src={ image } alt={ item.title } fill />
       </div>
       <div className={ styles.info }>
-        <h4>{ item.title }</h4>
+        <div className={ styles.titleContainer }>
+          <h4>{ item.title }</h4>
+        </div>
         <p>{ item.description }</p>
       </div>
     </article>

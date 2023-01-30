@@ -69,6 +69,7 @@
             color: $colour2;
             background-color: $colour1;
             border-radius: 50%;  
+            box-shadow: $LBLowShadow;
             
             &:nth-child(1){
               color: $colour2;
@@ -94,9 +95,9 @@
 
 
     .qualifications{
-      padding: 1em;
-      padding-top: calc($headerHeight + 20px);
-      // box-shadow: $LBLowShadow;
+      margin-top: 1em;
+      padding: calc($headerHeight + 12px) 12px;
+      box-shadow: $LBLowShadow;
 
 
       h4{
