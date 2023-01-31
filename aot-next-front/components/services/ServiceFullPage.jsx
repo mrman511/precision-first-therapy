@@ -22,28 +22,35 @@ export default function ServiceFullPage({ styles, service }) {
   return(
     <section className={ styles.service }>
 
-      <div className={ styles.imageContainer }>
-        <div>
-          <Image src={ image } fill alt={ service.title } />
+      <div className={ [styles.titleCard, styles.card].join(' ') }>
+        <div className={ styles.imageContainer }>
+          <div>
+            <Image src={ image } fill alt={ service.title } />
+          </div>
+        </div>
+
+        <div className={ styles.title }>
+          <h2 >{ service.title }</h2>
         </div>
       </div>
 
-      <div className={ styles.title }>
-        <h2 >{ service.title }</h2>
-        {/* { service.subtitle && <h3>{ service.subtitle }</h3> } */}
+      <div className={ [styles.infoCard, styles.card].join(' ') }>
+        <div className={ styles.infoContainer }>
+          <p>{ service.info }</p>
+        </div>
       </div>
 
-      <div className={ styles.infoContainer }>
-        <p>{ service.info }</p>
+      <div className={ styles.card }>
+        <div className={ [styles.infoContainer, styles.clinicInfo].join(' ') }>
+          <p>{ service.clinic_info }</p>
+        </div>
       </div>
 
-      <div className={ [styles.infoContainer, styles.clinicInfo].join(' ') }>
-        <p>{ service.clinic_info }</p>
+      <div className={ styles.card }>
+        <button className={ [styles.btn, styles.btnLg].join(' ') } onClick={(e) => { handleSubmit(e) }}>
+          Request { service.subject }
+        </button>
       </div>
-
-      <button className={ [styles.btn, styles.btnLg].join(' ') } onClick={(e) => { handleSubmit(e) }}>
-        Request { service.subject }
-      </button>
 
     </section>
   );

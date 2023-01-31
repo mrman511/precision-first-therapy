@@ -182,9 +182,10 @@
               stroke: $colour5;
               stroke-width: 2px;
               // stroke-miterlimit: 10;
-              stroke-dashoffset: 0;
+              stroke-dashoffset: -410;
               stroke-dasharray: 410;
-              animation: draw 1s reverse ease-out;
+              // transition: stroke-dashOffset 1s ease;
+              animation: draw 1s forwards;
             }
           }
         }
