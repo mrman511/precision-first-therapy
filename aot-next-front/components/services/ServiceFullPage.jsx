@@ -40,7 +40,7 @@ export default function ServiceFullPage({ styles, service }) {
         </div>
       </div>
 
-      <div className={ styles.card }>
+      <div className={ [styles.infoCard, styles.card].join(' ') }>
         <div className={ [styles.infoContainer, styles.clinicInfo].join(' ') }>
           <p>{ service.clinic_info }</p>
         </div>
