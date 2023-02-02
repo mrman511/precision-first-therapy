@@ -8,7 +8,7 @@
   margin-top: $headerHeight;
   color: $colour1;
   background-color: white;
-  // border: 1px solid black;
+  box-shadow: $LBLowShadow;
   border-bottom-left-radius: $xlRadius;
   border-bottom-right-radius: $xlRadius;
   
@@ -24,6 +24,7 @@
   width: 100%;
   @include flexRowCenterEven;
   flex-wrap: wrap;
+  // background-color: $offWhiteBackgroundColour;
   z-index: 0;
   
   .serviceCard{
@@ -31,6 +32,7 @@
     margin: 1em 5px;
     padding: 1em 0;
     box-shadow: $LBLowShadow;
+    background-color: white;
     @include flexColumnCenter;
     
     .titleContainer{

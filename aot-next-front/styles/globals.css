@@ -106,3 +106,9 @@ a:hover{
     color-scheme: dark;
   } */
 }
+
+@media only screen and (max-width: 738px) {
+  html::-webkit-scrollbar{
+    display: none;
+  }
+}

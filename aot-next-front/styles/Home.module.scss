@@ -228,7 +228,7 @@
 .main{
   width: 100%;
   @include flexColumnCenter;
-  background-color: white;
+  background-color: $offWhiteBackgroundColour;
 }
 
 //////////////////////////
