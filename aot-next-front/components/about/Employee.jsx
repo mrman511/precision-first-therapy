@@ -6,7 +6,8 @@ export default function Employee({ styles, employee }){
 
   return(
     <article className={ [styles.employee, employee.priority_role ? styles.prioityEmployee : ''].join(' ') }>
-      <div className={ styles.employeeBanner }>
+
+      <div className={ [styles.employeeBanner, styles.seperateCard].join(' ') }>
         <div className={ styles.profile }>
           <div className={ styles.imageContainer }>
             <Image src={ profileImage } fill alt={ employee.name } sizes={ imageSizes } />
@@ -35,7 +36,7 @@ export default function Employee({ styles, employee }){
       </div>
 
       <div 
-        className={ [styles.certifications, styles.qualifications].join(' ') }
+        className={ [styles.certifications, styles.qualifications, styles.seperateCard].join(' ') }
         id={ `${employee.name.split(' ').join('')}-certifications` }
         >
         <h4>Certifications and Training</h4>
@@ -49,7 +50,7 @@ export default function Employee({ styles, employee }){
       </div>
 
       <div 
-        className={ [styles.education, styles.qualifications].join(' ') } 
+        className={ [styles.education, styles.qualifications, styles.seperateCard].join(' ') } 
         id={ `${employee.name.split(' ').join('')}-education` }
       >
         <h4>Education</h4>
@@ -70,7 +71,7 @@ export default function Employee({ styles, employee }){
       </div>
 
       <div 
-        className={ [styles.achiements, styles.qualifications].join(' ') }
+        className={ [styles.achiements, styles.qualifications, styles.seperateCard].join(' ') }
         id={ `${employee.name.split(' ').join('')}-achivements` }
       >
         <h4>Achivements</h4>
