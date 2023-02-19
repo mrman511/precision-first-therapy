@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-// import emailjs from '@emailjs/browser';
+import React, { useRef, useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 import Form from './Form';
 // import Status from '../Status';
@@ -9,68 +9,129 @@ import useVisualMode from '../../utils/hooks/useVisualMode';
 // import sendEmail from '../../utils/apiRequests/sendEmail';
 
 export default function ContactMe({ styles, subject, setSubject }) {
-  // props.setPage('CONTACT');
   const { mode, transition } = useVisualMode("FORM")
-  const [name, setName] = useState(undefined);
-  const [email, setEmail] = useState(undefined);
-  const [message, setMessage] = useState(undefined);
+  const [message, setMessage] = useState({name: undefined})
+  const [formErrors, setFormErrors] = useState({});
 
-  const [errorType, setErrorType] = useState(undefined);
+  const handleChange = (e) => {
+    e.preventDefault();
+    setMessage(prev => {
+      const obj = prev;
+      obj[e.target.name] = e.target.value;
+      return obj;
+    })
+  }
 
-  const handleChange = (setTo, setChange) => {
-    if (setTo.target.value.length === 0){
-      setChange(undefined);
+  const addError = (errorName) => {
+    console.log("ERROR_NAME",errorName)
+    console.log('FORM ERRORs::: ', formErrors)
+    formErrors[errorName] = true 
+  }
+
+  const removeError = (errorName) => {
+    console.log(":::REMOVE-ERRORs:::");
+    formErrors[errorName] = false;
+  }
+
+  const validateMessage = () => {
+    if (!message.name || message.name.length <= 5){
+      addError('name');
     } else {
-      setChange(setTo.target.value);
+      removeError('name');
+    }
+
+    if (!message.subject || message.subject.length <= 10){
+      addError('subject');
+    } else {
+      removeError('subject');
+    }
+
+    const emailRegrex = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+
+    if (!message.email || !message.email.match(emailRegrex)){
+      addError('email');
+    } else {
+      removeError('email');
+    }
+
+    if (!message.message || message.message.length <= 100){
+      addError('message');
+    } else {
+      removeError('message');
     }
   }
 
-  const form = useRef();
+  console.log("ERRORS::::", formErrors)
+  useEffect(() => {
+    console.log("USEEFFECT ERRORS::::", formErrors)
+  }, [formErrors])
 
-  const sendEmail = () => {
-   let x=1
-    // emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
-    //   process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, 
-    //   form.current, 
-    //   process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-    //   .then((result) => {
-    //       transition("CONFIRM");
-    //   }, (error) => {
-    //       console.log(error.text);
-    //   });
+  
+  const sendEmail = (form) => {
+    emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, 
+      message, 
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      .then((result) => {
+          // transition("CONFIRM");
+      }, (error) => {
+          console.log(error.text);
+      }
+    );
+  }
+
+  const submitForm = (e, form) => {
+    e.preventDefault();
+    console.log("ERROR OBJ:::", formErrors)
+    validateMessage();
+
+    let errBool = false;
+
+    for (let key in formErrors){
+      formErrors[key] ? errBool = true : '';
+    }
+
+    console.log(errBool)
+
+    errBool ? setFormErrors({ ...formErrors }) : sendEmail();
+
+    //
   };
-
-  const confirmForm = (event) => {
-    let x=2
-    // event.preventDefault();
-    // if (!name || !email|| !message){
-    //   setErrorType('INCOMPLETE');
-    // } else if (!email.includes('@') || !email.includes('.')){
-    //   setErrorType('EMAIL');
-    // } else if (message.length < 50) {
-    //   setErrorType('MESSAGE');
-    // } else {
-    //   transition("STATUS");
-    //   sendEmail(form.current, transition);
-    // }
-}
 
   return (
     <section className={ styles.contact }>
-      { mode === "FORM" && < Form 
-        styles={ styles }
-        submitForm={ confirmForm } 
-        form={ form } 
-        handleChange={ handleChange }
-        setName={ setName }
-        setEmail={ setEmail }
-        setMessage={ setMessage }
-        subject={ subject }
-        setSubject={ setSubject }
-        error={ errorType } 
-        /> }
-      {/* { mode === "STATUS" && < Status styles={ statusStyles }/> } */}
-      { mode === "CONFIRM" && < Confirmation styles={ styles }/>}
+      <article className={ styles.formContainer } id="contact-form">
+        <div className={ [styles.contactMessage, styles.gridItem].join(' ') }>
+          <h3>Reach Out</h3>
+          <p className={ styles.contactLine }>Contact us to book an appointment, get more information on our services, or ask any other questions.</p>
+        </div>
+
+        <div className={ [styles.contactDetails, styles.gridItem].join(' ') }>
+          <div>
+            <h4><strong>Our Email:</strong></h4>
+            <p className={ styles.contactEmail }>admin@aotservices.ca</p>
+          </div>
+          <div>
+            <h4><strong>Our Phone:</strong></h4>
+            <p className={ styles.contactEmail }>(778) 744-9178</p>
+          </div>
+        </div>
+
+        <div className={ [styles.disclaimer, styles.gridItem].join(' ') }>
+          <p>We pride ourselves in our ability to respond quickly to all inquiries. Responses can be expected within one business day. </p>
+        </div>
+
+        { mode === "FORM" && < Form 
+          styles={ styles }
+          submitForm={ submitForm } 
+          // form={ form } 
+          handleChange={ handleChange }
+          subject={ subject }
+          error={ formErrors }
+          /> }
+        {/* { mode === "STATUS" && < Status styles={ statusStyles }/> } */}
+        { mode === "CONFIRM" && < Confirmation styles={ styles }/>}
+      </article>
     </section>
   );
 };
