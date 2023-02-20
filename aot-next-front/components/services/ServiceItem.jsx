@@ -41,7 +41,7 @@ export default function ServiceItem({ styles, service, index }){
     <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 !== 0 ? styles.alt : '' )].join(' ')}>
       <div className={ styles.titleContainer }>
         <div className={ styles.imageContainer }>
-          <Image src={ image } alt={ service.title } fill />
+          <Image src={ image } alt={ service.title } fill blurDataURL="blur" />
         </div>
 
         <div className={ styles.title }>
