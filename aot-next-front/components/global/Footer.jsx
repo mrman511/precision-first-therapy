@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Footer({ styles }){
 
@@ -18,15 +19,15 @@ export default function Footer({ styles }){
         <div className={ [styles.footerHeader, styles.footerComponent].join(' ') }>
           <h2><span>AOT</span> Services</h2>
           <ul>
-            <li><a href="/" onClick={ (e) => { handleClick(e, '/') } }>Home</a></li>
-            <li><a href="/about" onClick={ (e) => { handleClick(e, '/about') } }>About Us</a></li>
-            <li><a href="/services" onClick={ (e) => { handleClick(e, '/services') } }>Services</a></li>
-            <li><a href="/contact" onClick={ (e) => { handleClick(e, '/contact') } }>Contact</a></li>
+            <li><Link href="/" onClick={ (e) => { handleClick(e, '/') } }>Home</Link></li>
+            <li><Link href="/about" onClick={ (e) => { handleClick(e, '/about') } }>About Us</Link></li>
+            <li><Link href="/services" onClick={ (e) => { handleClick(e, '/services') } }>Services</Link></li>
+            <li><Link href="/contact" onClick={ (e) => { handleClick(e, '/contact') } }>Contact</Link></li>
           </ul>
         </div>
 
         <div className={ styles.footerComponent }>
-          <p>© 2023 Ariana's Occupational Therapy Services</p>
+          <p>{`© 2023 Ariana's Occupational Therapy Services`}</p>
         </div>
       </article>
     </footer>

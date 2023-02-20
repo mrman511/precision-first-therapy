@@ -42,8 +42,8 @@ export default function Employee({ styles, employee }){
         <h4>Certifications and Training</h4>
         <ul>
           {
-            employee.certifications.map(certification => (
-              <li>{ certification }</li> 
+            employee.certifications.map((certification, i) => (
+              <li key={`employee-${ employee.name }-certification-${i}`}>{ certification }</li> 
             ))
           }
         </ul>
@@ -55,8 +55,11 @@ export default function Employee({ styles, employee }){
       >
         <h4>Education</h4>
         {
-          employee.education.map(degree => (
-            <div className={ styles.degree }>
+          employee.education.map((degree, i) => (
+            <div 
+              key={`employee-${ employee.name }-degree-${i}`} 
+              className={ styles.degree } 
+            >
               <h5>
                 { degree.factuly ? degree.factuly + ', ' : ''  }
                 { degree.school }, { degree.city } { degree.province }
@@ -76,8 +79,10 @@ export default function Employee({ styles, employee }){
       >
         <h4>Achivements</h4>
         {
-          employee.achivements.map(achiement => (
-            <div className={ styles.achiement }>
+          employee.achivements.map((achiement, i) => (
+            <div 
+            key={`employee-${ employee.name }-achievment-${i}`}
+            className={ styles.achiement }>
               <h5>{ achiement.title }</h5>
               <p>{ achiement.subtitle }</p>
             </div>

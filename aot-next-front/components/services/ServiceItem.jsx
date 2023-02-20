@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -41,7 +42,7 @@ export default function ServiceItem({ styles, service, index }){
     <article className={[styles.serviceCard, styles[service.display + 'Card'], styles[service.id_tag], (index % 2 !== 0 ? styles.alt : '' )].join(' ')}>
       <div className={ styles.titleContainer }>
         <div className={ styles.imageContainer }>
-          <Image src={ image } alt={ service.title } fill />
+          <Image src={ image } alt={ service.title } fill blurDataURL="blur" />
         </div>
 
         <div className={ styles.title }>
@@ -55,13 +56,13 @@ export default function ServiceItem({ styles, service, index }){
       </ul>
 
       <div className={ styles.routes }>
-        <a href="/services/service" onClick={(e) => { handleClickInfo(e) }}> 
+        <Link href="/services/service" onClick={(e) => { handleClickInfo(e) }}> 
           <FontAwesomeIcon icon={ faCircleInfo } className={ styles.icon }/>
-        </a>
+        </Link>
 
-        <a href="/contact" onClick={(e) => { handleClickMail(e) }}>
+        <Link href="/contact" onClick={(e) => { handleClickMail(e) }}>
           <FontAwesomeIcon icon={ faEnvelope } className={ styles.icon }/>
-        </a>
+        </Link>
       </div>
     </article>
   );
