@@ -5,7 +5,7 @@ export default function Form(props) {
 
   return (
     <form 
-      onSubmit={ (e) => { submitForm(e, form) } } 
+      onSubmit={ (e) => { submitForm(e) } } 
       className={ [styles.email, styles.gridItem].join(' ') }
       >
 
@@ -42,7 +42,8 @@ export default function Form(props) {
           name="subject" 
           className={ styles.inputArea } 
           onChange={(e) => handleChange(e) }
-          placeholder={ subject ? subject : 'Subject*' } 
+          placeholder='Subject*'
+          value={ subject ? subject : undefined}
           />
       </div>
 

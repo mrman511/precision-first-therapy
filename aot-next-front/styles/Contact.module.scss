@@ -64,6 +64,10 @@
     "disclaimer";
   background-color: white;
   box-shadow: $LBDeepShadow;
+
+  .error{
+    color: $colour5;
+  }
     
   .gridItem{
     // @include fill;
