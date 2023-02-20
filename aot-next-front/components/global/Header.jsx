@@ -28,7 +28,7 @@ export default function Header({ styles, alt }){
       toggleDropMenu();
     }
   }, 
-  [overParent, overChild, dropMenu]
+  [overParent, overChild, dropMenu, toggleDropMenu]
   );
 
   return(

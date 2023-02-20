@@ -21,7 +21,7 @@ export default function Contact(){
     if (router.query.subject && !subject){
       setSubject(router.query.subject)
     }
-  })
+  }, [router.query.subject, subject])
 
   return (
     <>
