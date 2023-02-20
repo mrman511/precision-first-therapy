@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.svg{
+  width: 95%;
+
+  .statusSvg{
+    fill: none;
+    stroke: $colour4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 10px;
+
+    stroke-dasharray: 8900;
+    stroke-dashoffset: 8900;
+    // stroke-dashoffset: 8900;
+
+    transition: stroke-dashOffset 5s linear;
+    animation: draw 1s forwards infinite;
+  }
+
+  .animate{
+    stroke-dashoffset: 0;
+  }
+}
+

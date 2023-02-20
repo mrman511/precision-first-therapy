@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+@mixin messageContainer($border, $background){
+
+  height: 100%;
+  width: 100%;
+  padding: 2%;
+  @include  flexItemCenter;
+  color: $colour1;
+  // @if $background{
+    background-color: $background;
+  // }
+  border: 3px solid $border;
+}
+
+.success{
+  @include messageContainer($colour1, white);
+
+  h3{
+    font-family: $cursiveFont;
+    font-size: 3.5em;
+  }
+
+  p{
+    padding: .5em;
+  }
+}
+
+.error{
+  @include messageContainer($colour4, lighten($colour5, 25%));
+
+  h3{
+    font-size: 2em;
+  }
+}

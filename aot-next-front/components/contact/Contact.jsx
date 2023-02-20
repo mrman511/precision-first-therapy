@@ -1,12 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 import Form from './Form';
-// import Status from '../Status';
-import Confirmation from './Confirmation';
+import Confirmation from '../global/Confirmation';
+import Status from '../global/Status';
 
 import useVisualMode from '../../utils/hooks/useVisualMode';
-// import sendEmail from '../../utils/apiRequests/sendEmail';
 
 export default function ContactMe({ styles, subject, setSubject }) {
   const { mode, transition } = useVisualMode("FORM")
@@ -23,66 +22,37 @@ export default function ContactMe({ styles, subject, setSubject }) {
   }
 
   const addError = (errorName) => {
-    console.log("ERROR_NAME",errorName)
-    console.log('FORM ERRORs::: ', formErrors)
     formErrors[errorName] = true 
   }
 
   const removeError = (errorName) => {
-    console.log(":::REMOVE-ERRORs:::");
     formErrors[errorName] = false;
   }
 
   const validateMessage = () => {
-    if (!message.name || message.name.length <= 5){
-      addError('name');
-    } else {
-      removeError('name');
-    }
-
-    if (!message.subject || message.subject.length <= 10){
-      addError('subject');
-    } else {
-      removeError('subject');
-    }
-
-    const emailRegrex = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-
-    if (!message.email || !message.email.match(emailRegrex)){
-      addError('email');
-    } else {
-      removeError('email');
-    }
-
-    if (!message.message || message.message.length <= 100){
-      addError('message');
-    } else {
-      removeError('message');
-    }
+    const emailRegrex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    (!message.name || message.name.length <= 5) ? addError('name') : removeError('name');
+    (!message.subject || message.subject.length <= 10) ? addError('subject') : removeError('subject');
+    (!message.email || !message.email.match(emailRegrex)) ? addError('email') : removeError('email');
+    (!message.message || message.message.length <= 100) ? addError('message') : removeError('message');
   }
-
-  console.log("ERRORS::::", formErrors)
-  useEffect(() => {
-    console.log("USEEFFECT ERRORS::::", formErrors)
-  }, [formErrors])
-
   
-  const sendEmail = (form) => {
+  const sendEmail = () => {
+    transition("STATUS");
     emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, 
       message, 
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
       .then((result) => {
-          // transition("CONFIRM");
+          transition("SUCCESS");
       }, (error) => {
-          console.log(error.text);
+          transition("ERROR");
       }
     );
   }
 
-  const submitForm = (e, form) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    console.log("ERROR OBJ:::", formErrors)
     validateMessage();
 
     let errBool = false;
@@ -91,11 +61,7 @@ export default function ContactMe({ styles, subject, setSubject }) {
       formErrors[key] ? errBool = true : '';
     }
 
-    console.log(errBool)
-
     errBool ? setFormErrors({ ...formErrors }) : sendEmail();
-
-    //
   };
 
   return (
@@ -124,13 +90,13 @@ export default function ContactMe({ styles, subject, setSubject }) {
         { mode === "FORM" && < Form 
           styles={ styles }
           submitForm={ submitForm } 
-          // form={ form } 
           handleChange={ handleChange }
           subject={ subject }
           error={ formErrors }
           /> }
-        {/* { mode === "STATUS" && < Status styles={ statusStyles }/> } */}
-        { mode === "CONFIRM" && < Confirmation styles={ styles }/>}
+        { mode === "STATUS" && < Status componentStyles={ [styles.email, styles.gridItem].join(' ') }/> }
+        { mode === "SUCCESS" && < Confirmation componentStyles={ [styles.email, styles.gridItem].join(' ') } /> }
+        { mode === "ERROR" && < Confirmation componentStyles={ [styles.email, styles.gridItem].join(' ') } error={ true } /> }
       </article>
     </section>
   );
