@@ -9,6 +9,6 @@
   publish = ".next"
 
   # Default build command.
-  command = "CI= npm run-script build"
+  command = "npx next build"
 
 [build.environment]
