@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -55,13 +56,13 @@ export default function ServiceItem({ styles, service, index }){
       </ul>
 
       <div className={ styles.routes }>
-        <a href="/services/service" onClick={(e) => { handleClickInfo(e) }}> 
+        <Link href="/services/service" onClick={(e) => { handleClickInfo(e) }}> 
           <FontAwesomeIcon icon={ faCircleInfo } className={ styles.icon }/>
-        </a>
+        </Link>
 
-        <a href="/contact" onClick={(e) => { handleClickMail(e) }}>
+        <Link href="/contact" onClick={(e) => { handleClickMail(e) }}>
           <FontAwesomeIcon icon={ faEnvelope } className={ styles.icon }/>
-        </a>
+        </Link>
       </div>
     </article>
   );
