@@ -10,7 +10,7 @@ export default function Status({ componentStyles}){
 
   useEffect(()=> {
     animate ? '' : setAnimate(true);  
-  }, [setAnimate])
+  }, [animate])
 
   return (
     <article className={ [styles.status, componentStyles].join(' ') }>
