@@ -8,9 +8,10 @@ export default function Hero({ styles, services }){
     <section className={ styles.hero }>
       <div className={ styles.imageContainer }>
         <Image  
-        src={ bannerImage } 
-        fill alt="AOT services" 
-        sizes="(max-width: 600px) 200px"/>
+          src={ bannerImage } 
+          fill 
+          alt="AOT services" 
+        />
       </div>
       
       <Services styles={ styles } services={ services } />

@@ -7,7 +7,7 @@ export default function ContactHeaderItem({ styles, item }){
   return(
     <article className={ styles.contactHeaderCard }>
       <div className={ styles.imageContainer }>
-        <Image src={ image } alt={ item.title } fill sizes="200px" />
+        <Image src={ image } alt={ item.title } fill />
       </div>
       <div className={ styles.info }>
         <div className={ styles.titleContainer }>

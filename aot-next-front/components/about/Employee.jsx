@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Employee({ styles, employee }){
   const profileImage = require(`../../public/employees/${ employee.image_path }`);
-  const imageSizes = '100px';
+  // const imageSizes = '100px';
 
   return(
     <article className={ [styles.employee, employee.priority_role ? styles.prioityEmployee : ''].join(' ') }>
@@ -10,7 +10,7 @@ export default function Employee({ styles, employee }){
       <div className={ [styles.employeeBanner, styles.seperateCard].join(' ') }>
         <div className={ styles.profile }>
           <div className={ styles.imageContainer }>
-            <Image src={ profileImage } fill alt={ employee.name } sizes={ imageSizes } />
+            <Image src={ profileImage } fill alt={ employee.name } />
           </div>
           <div className={ styles.name }>
             <h2>{ employee.name }</h2>
