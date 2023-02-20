@@ -12,6 +12,3 @@
   command = "npx next build"
 
 [build.environment]
-
- [[plugins]]
-package = "@netlify/plugin-nextjs"
