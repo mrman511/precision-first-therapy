@@ -27,7 +27,7 @@ export default function Footer({ styles }){
         </div>
 
         <div className={ styles.footerComponent }>
-          <p>{`© 2023 Ariana's Occupational Therapy Services`}</p>
+          <p>{`2023 Ariana's Occupational Therapy Services`}</p>
         </div>
       </article>
     </footer>
