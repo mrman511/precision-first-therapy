@@ -5,14 +5,13 @@
   width: 100%;
   min-height: calc(95vh - 100px);
   margin: 2em 0;
-  // padding: 1em 0;
   margin-top: 120px;
   @include flexColumnCenter;
   box-shadow: $LBLowShadow;
   overflow: hidden;
   
   .card{
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: 1em 0;
     @include flexColumnCenter;
@@ -20,7 +19,7 @@
     box-shadow: $LBLowShadow;
     overflow: hidden;
   }
-
+ 
   .titleCard{
     max-height: 300px;
 
@@ -50,15 +49,10 @@
     }
   }
 
-  .infoCard{
-    margin-bottom: 0;
-  }
-  
-
   .infoContainer{
     width: 100%;
     margin: 1em;
-    padding: .5em;
+    padding: 1em;
     text-indent: 1em;
   }
 

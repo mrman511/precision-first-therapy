@@ -25,7 +25,7 @@ const employees = [
       'Sleep: The Unconscious ADL',
       'Coping: How OT Mental Health Training Applies Across the Age and Impairment Spectrum',
       'Yoga Supports for Addiction Recovery',
-      'Occupational Therapy&#39;s Role in the Management of Neck Pain',
+      `Occupational Therapy's Role in the Management of Neck Pain`,
       'Recommendations For Preventing And Managing Mechanical Low Back Pain With Occupational Therapy Clients',
       'Suicide Awareness, Assessment and Intervention for Allied Health Professionals',
       'Suicide and Self-Harm in the Elderly',
