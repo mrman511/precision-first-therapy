@@ -18,7 +18,7 @@ export default [
     to be formed. Ergonomics truly matters and it’s important to be knowledgeable on how your
     workspace could be impacting you. Some ergonomic risk factors can be easy to identify but
     others are not as observable – that’s where OTs trained in this ergonomics come in.`,
-    list: ['Work environment assessment', 'Itentifying ergonomic risk factors', 'Equippment recomendations', 'Budget-focused solutions'],
+    list: ['Work environment assessment', 'Identifying ergonomic risk factors', 'Equipment recomendations', 'Budget-focused solutions'],
   },
   {
     id: 2,
