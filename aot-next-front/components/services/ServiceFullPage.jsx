@@ -22,7 +22,7 @@ export default function ServiceFullPage({ styles, service }) {
   return(
     <section className={ styles.service }>
 
-      <div className={ [styles.titleCard, styles.card].join(' ') }>
+      <article className={ [styles.titleCard, styles.card].join(' ') }>
         <div className={ styles.imageContainer }>
           <div>
             <Image src={ image } fill alt={ service.title } />
@@ -32,25 +32,23 @@ export default function ServiceFullPage({ styles, service }) {
         <div className={ styles.title }>
           <h2 >{ service.title }</h2>
         </div>
-      </div>
+      </article>
 
-      <div className={ [styles.infoCard, styles.card].join(' ') }>
+      <article className={ styles.card }>
         <div className={ styles.infoContainer }>
           <p>{ service.info }</p>
         </div>
-      </div>
 
-      <div className={ [styles.infoCard, styles.card].join(' ') }>
+        
         <div className={ [styles.infoContainer, styles.clinicInfo].join(' ') }>
           <p>{ service.clinic_info }</p>
         </div>
-      </div>
 
-      <div className={ styles.card }>
         <button className={ [styles.btn, styles.btnLg].join(' ') } onClick={(e) => { handleSubmit(e) }}>
           Request { service.subject }
         </button>
-      </div>
+      </article>
+
 
     </section>
   );

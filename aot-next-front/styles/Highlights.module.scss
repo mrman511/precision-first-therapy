@@ -45,7 +45,7 @@
         @include flexItemCenter;
 
         h3{
-          font-size: 38px;
+          font-size: 32px;
           color: white;
         }
       }
@@ -99,6 +99,19 @@
     width: 90vw;
     grid-template: repeat(5, calc(((90vw / 5) * 4))) / 1fr;
     grid-template-areas: "ergo" "anx" "func" "work" "con";
+
+    .highlightCard{
+
+      .titleContainer{
+        
+        .motionContainer{
+          
+          h3{
+            font-size: 38px;
+          }
+        }
+      }
+    }
   }
 }
 
