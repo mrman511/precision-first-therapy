@@ -1,5 +1,4 @@
 export default function Form(props) {
-  const placeholder = 'Please write your message here and you will hear from me as soon as possible.'
 
   const { styles, subject, submitForm, handleChange, error} = props;
 
@@ -43,7 +42,7 @@ export default function Form(props) {
           className={ styles.inputArea } 
           onChange={(e) => handleChange(e) }
           placeholder='Subject*'
-          value={ subject ? subject : undefined}
+          value={ subject ? subject : null }
           />
       </div>
 
@@ -51,7 +50,8 @@ export default function Form(props) {
         { error.email && <p className={ styles.error }>
           *Please add a more detailed message*
         </p> }
-        <textarea placeholder={ placeholder } 
+        <textarea 
+          placeholder="Please write your message here."
           name="message" 
           id="message" 
           className={ styles.inputArea } 
