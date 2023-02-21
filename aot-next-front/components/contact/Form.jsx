@@ -1,10 +1,10 @@
 export default function Form(props) {
 
   const { styles, subject, submitForm, handleChange, error} = props;
-
+  
   return (
     <form 
-      onSubmit={ (e) => { submitForm(e) } } 
+      onSubmit={ (e) => { submitForm(e, subject) } } 
       className={ [styles.email, styles.gridItem].join(' ') }
       >
 
@@ -41,13 +41,27 @@ export default function Form(props) {
           name="subject" 
           className={ styles.inputArea } 
           onChange={(e) => handleChange(e) }
-          placeholder='Subject*'
-          value={ subject ? subject : null }
+          placeholder={ subject ? subject : 'Subject*' }
           />
+
+        {/* { subject ? <input 
+          type="text" id="subject" 
+          name="subject" 
+          className={ styles.inputArea } 
+          onChange={(e) => handleChange(e) }
+          placeholder='Subject*'
+          value={ subject }
+        /> : <input 
+          type="text" id="subject" 
+          name="subject" 
+          className={ styles.inputArea } 
+          onChange={(e) => handleChange(e) }
+          placeholder='Subject*'
+        /> } */}
       </div>
 
       <div className={ [styles.info, styles.message].join(' ') }>
-        { error.email && <p className={ styles.error }>
+        { error.message && <p className={ styles.error }>
           *Please add a more detailed message*
         </p> }
         <textarea 

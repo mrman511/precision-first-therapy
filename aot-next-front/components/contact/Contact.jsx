@@ -32,35 +32,37 @@ export default function ContactMe({ styles, subject, setSubject }) {
   const validateMessage = () => {
     const emailRegrex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     (!message.name || message.name.length <= 2) ? addError('name') : removeError('name');
-    (!message.subject || message.subject.length <= 5) ? addError('subject') : removeError('subject');
+    (!subject && !message.subject) ? (!message.subject || message.subject.length <= 5) ? addError('subject') : removeError('subject'): '';
     (!message.email || !message.email.match(emailRegrex)) ? addError('email') : removeError('email');
-    (!message.message || message.message.length <= 50) ? addError('message') : removeError('message');
+    (!message.message || message.message.length <= 25) ? addError('message') : removeError('message');
   }
   
   const sendEmail = () => {
     transition("STATUS");
+    (subject && !message.subject) ? message.subject = subject : '';
     emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, 
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE, 
       message, 
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
       .then((result) => {
-          transition("SUCCESS");
+        transition("SUCCESS");
       }, (error) => {
-          transition("ERROR");
+        transition("ERROR");
       }
-    );
-  }
-
-  const submitForm = (e) => {
+      );
+    }
+    
+    const submitForm = (e) => {
     e.preventDefault();
     validateMessage();
-
+    
     let errBool = false;
-
+    
     for (let key in formErrors){
       formErrors[key] ? errBool = true : '';
     }
-
+    
+    console.log(formErrors)
     errBool ? setFormErrors({ ...formErrors }) : sendEmail();
   };
 
