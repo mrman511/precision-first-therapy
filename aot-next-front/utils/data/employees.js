@@ -13,6 +13,7 @@ const employees = [
       path and proudly founded Ariana’s Occupational Therapy Services, or simply,
       AOT Services.`,
     certifications: [
+      'Traumatic Brain Injury Master Class - Advanced Level',
       'Progressive Goal Attainment Program (PGAP) Certified',
       'Introductory Cognitive Behavioral Therapy Training with CAOT',
       'Cognitive Rehabilitation Training with CAOT',

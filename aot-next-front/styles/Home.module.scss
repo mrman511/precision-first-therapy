@@ -255,10 +255,11 @@
       ul{
         list-style: none;
       }
-
-      &:nth-child(1){
-        margin-bottom: 1em;
-      }
+      margin-bottom: .75em;
+    }
+    .info{
+      display: flex;
+      flex-direction: column-reverse;
     }
 
   }
@@ -322,6 +323,16 @@
             font-size: 21px;
           }
         }
+      }
+
+      .info{
+        flex-direction: row;
+        margin-bottom: 0;
+      }
+
+      .contactInfo{
+        @include flexColumn;
+        width: 200px
       }
     }
   }
