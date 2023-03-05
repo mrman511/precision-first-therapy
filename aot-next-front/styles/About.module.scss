@@ -89,7 +89,6 @@
             background-color: $colour5;
           }
         }
-
       }
 
     }
@@ -157,13 +156,15 @@
   }
 }
 
-@media only screen and (min-width: 750px){
-  .employee{
-    width: 95%;
+@media only screen and ( min-width: 1000px ){
+  .employee {
 
     .employeeBanner{
-      grid-template: auto auto / repeat(2, 1fr);
-      grid-template-areas: "profile info" "profile bio";
+      grid-template: auto auto auto / repeat(5, 1fr);
+      grid-template-areas: 
+      "profile profile info info info" 
+      "profile profile info info info"
+      "bio bio bio bio bio";
 
       .profile{
         grid-area: profile;
@@ -173,29 +174,26 @@
       .info {
         padding: 0;
         margin: 0;
-        margin-left: 10%;
         grid-area: info;
-        align-items: start;
+        align-items: center;
+        justify-content: start;
       }
 
       .bio {
         grid-area: bio;
       }
     }
-
-
-
   }
 }
 
-@media only screen and ( min-width: 1000px ){
+@media only screen and ( min-width: 1096px ){
   .employee {
 
-    .employeeBanner{
-      grid-template: auto auto / repeat(5, 1fr);
-      grid-template-areas: 
-      "profile profile info info info" 
-      "profile profile bio bio bio";
+    .employeeBanner {
+
+      .info {
+        justify-content: center;
+      }
     }
   }
 }
