@@ -31,7 +31,7 @@ export default function Footer({ styles }){
           <p>{`2023 Ariana's Occupational Therapy Services`}</p>
           <div className={ [ styles.contactInfo].join(' ') }>
             <Link href={ `tel:${7787449178}` }>(778) 744-9178</Link>
-            <Link href="malito:admin@aotservices.ca">admin@aotservices.com</Link>
+            <Link href="malito:admin@aotservices.ca">admin@aotservices.ca</Link>
           </div>
         </div>
       </article>
