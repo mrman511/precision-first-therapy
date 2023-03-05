@@ -5,13 +5,18 @@ const employees = [
     priority_role: true,
     image_path: 'ariana-gverzdys.jpg',
     linkedIn: 'https://www.linkedin.com/in/ariana-gverzdys-8998a63b/',
-    bio: `Ariana has worked with individuals experiencing various health conditions including severe
-      TBIs &amp; concussions, bone fractures, spinal cord injuries, anxiety disorders such as OCD, and
+    bio: `Ariana is an occupational therapist registered in both Canada and the United States, 
+      with current provincial licensing in British Columbia. After receiving her Master’s Degree in 
+      Occupational Therapy at the University of Western Ontario in 2016, she moved to Vancouver for a 
+      career opportunity in helping those in the community. After 5 years, she has ventured off on her 
+      own path and proudly founded Ariana’s Occupational Therapy Services, or simply, AOT Services.
+      Ariana has worked with individuals experiencing various health conditions including severe
+      TBIs & concussions, bone fractures, spinal cord injuries, anxiety disorders such as OCD, and
       chronic pain. She actively liaises with a client’s treatment team to develop individualized
       care plan focused on stabilizing physical, cognitive, and/or mental health symptoms.
       Her goal is to develop a recovery plan, that includes evidence-based treatment, that will
       allow clients to get back to engaging in the activities that fulfil not only their day but life.
-      Ariana has participated in various workshops &amp; seminars throughout the years aimed at
+      Ariana has participated in various workshops & seminars throughout the years aimed at
       increasing knowledge of evidence-based practices for occupational therapists. Please
       see the list of certifications below.`,
     certifications: [
