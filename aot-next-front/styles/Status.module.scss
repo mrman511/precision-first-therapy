@@ -12,14 +12,67 @@
 
     stroke-dasharray: 8900;
     stroke-dashoffset: 8900;
-    // stroke-dashoffset: 8900;
-
-    transition: stroke-dashOffset 5s linear;
-    animation: draw 1s forwards infinite;
+    animation: draw 5s forwards infinite;
   }
+}
 
-  .animate{
-    stroke-dashoffset: 0;
+
+
+@keyframes draw{
+  //stem
+  5% {
+    stroke-dashOffset: 8110;
+    animation-timing-function: ease-in;
+  }
+  //leaf
+  18% {
+    stroke-dashOffset: 7240;
+    animation-timing-function: ease-in;
+  }
+  //stem
+  22% {
+    stroke-dashOffset: 6740;
+    animation-timing-function: ease-in;
+  }
+  //leaf
+  36% {
+    stroke-dashOffset: 5605;
+    animation-timing-function: ease-in;
+  }
+  //stem
+  39% {
+    stroke-dashOffset: 5103;
+    animation-timing-function: ease-in;
+  }
+  //leaf
+  54% {
+    stroke-dashOffset: 4000;
+    animation-timing-function: ease-in;
+  }
+  //stem
+  57% {
+    stroke-dashOffset: 3640;
+    animation-timing-function: ease-in;
+  }
+  //leaf
+  72% {
+    stroke-dashOffset: 2680;
+    animation-timing-function: ease-in;
+  }
+  //stem
+  75% {
+    stroke-dashOffset: 2250;
+    animation-timing-function: ease-in;
+  }
+  //leaf
+  94% {
+    stroke-dashOffset: 1060;
+    animation-timing-function: ease-in;
+  }
+  //stem
+  100% {
+    stroke-dashOffset: 0;
+    animation-timing-function: ease-in;
   }
 }
 
