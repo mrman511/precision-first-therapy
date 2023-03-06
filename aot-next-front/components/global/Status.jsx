@@ -1,16 +1,7 @@
-import { useState, useEffect } from "react";
-
-import Image from "next/image";
-
 import styles from '../../styles/Status.module.scss';
 
-
 export default function Status({ componentStyles}){
-  const [animate, setAnimate] = useState(false);
 
-  useEffect(()=> {
-    animate ? '' : setAnimate(true);  
-  }, [animate])
 
   return (
     <article className={ [styles.status, componentStyles].join(' ') }>
