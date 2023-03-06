@@ -8,7 +8,7 @@ import Status from '../global/Status';
 import useVisualMode from '../../utils/hooks/useVisualMode';
 
 export default function ContactMe({ styles, subject, setSubject }) {
-  const { mode, transition } = useVisualMode("STATUS")
+  const { mode, transition } = useVisualMode("FORM")
   const [message, setMessage] = useState({name: undefined})
   const [formErrors, setFormErrors] = useState({});
 
