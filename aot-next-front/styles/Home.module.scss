@@ -119,8 +119,8 @@
     @include flexColumnCenter;
 
     .imageContainer{
-      width: 300px;
       height: 500px;
+      width: calc(500px * .516);
       max-height: 600px;
       position: relative;
       @include flexColumnCenter;
@@ -293,7 +293,8 @@
       justify-content: space-evenly;
 
       .imageContainer{
-        height: 100%;
+        height: 80vh;
+        width: calc(80vh * .516);
       }
     }
   }
