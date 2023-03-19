@@ -15,7 +15,7 @@ const employees = [
       chronic pain. She actively liaises with a client’s treatment team to develop individualized
       care plan focused on stabilizing physical, cognitive, and/or mental health symptoms.
       Her goal is to develop a recovery plan, that includes evidence-based treatment, that will
-      allow clients to get back to engaging in the activities that fulfil not only their day but life.
+      allow clients to get back to engaging in the activities that fulfil not only their day, but thier daily life.
       Ariana has participated in various workshops & seminars throughout the years aimed at
       increasing knowledge of evidence-based practices for occupational therapists. Please
       see the list of certifications below.`,
@@ -41,7 +41,7 @@ const employees = [
       'Non-Violent Crisis Intervention',
       'Wheelchair Assessment and Prescription Workshop',
     ],
-    achivements: [
+    achievements: [
       {
         title: 'Achievement of the National Board for Certification in Occupational Therapy',
         subtitle: 'Current registration as an occupational therapist (OTR) in the United States'
@@ -71,6 +71,17 @@ const employees = [
         grad_year: 2013,
       },
     ],
+    badges: [{
+        authority: "NBCOT",
+        designation: "OTR",
+        path: "NBCOT-otr.png"
+      },
+      {
+        authority: "NBCOT",
+        designation: "Adult Rehabilitation",
+        path: "NBCOT-adult-rehabilitation.png"
+      }
+    ]
   },
 ];
 
