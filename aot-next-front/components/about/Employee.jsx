@@ -1,8 +1,15 @@
 import Image from "next/image";
 
+import EmployeeBadge from "./EmployeeBadge";
+
 export default function Employee({ styles, employee }){
   const profileImage = require(`../../public/employees/${ employee.image_path }`);
-  // const imageSizes = '100px';
+
+  const badges = employee.badges.map((badge, i) => <EmployeeBadge 
+    key={`Employee${ employee.name }-badge${i} `}
+    styles={ styles }
+    path={ badge.path }
+  />)
 
   return(
     <article className={ [styles.employee, employee.priority_role ? styles.prioityEmployee : ''].join(' ') }>
@@ -33,7 +40,13 @@ export default function Employee({ styles, employee }){
         <div className={ styles.bio}>
           <p>{ employee.bio }</p>
         </div>
+
+        <div className={ styles.badges }>
+          { badges }
+        </div>
+
       </div>
+
 
       <div 
         className={ [styles.certifications, styles.qualifications, styles.seperateCard].join(' ') }
@@ -74,17 +87,15 @@ export default function Employee({ styles, employee }){
       </div>
 
       <div 
-        className={ [styles.achiements, styles.qualifications, styles.seperateCard].join(' ') }
-        id={ `${employee.name.split(' ').join('')}-achivements` }
+        className={ [styles.achievements, styles.qualifications, styles.seperateCard].join(' ') }
+        id={ `${employee.name.split(' ').join('')}-achievements` }
       >
-        <h4>Achivements</h4>
+        <h4>Achievements</h4>
         {
-          employee.achivements.map((achiement, i) => (
-            <div 
-            key={`employee-${ employee.name }-achievment-${i}`}
-            className={ styles.achiement }>
-              <h5>{ achiement.title }</h5>
-              <p>{ achiement.subtitle }</p>
+          employee.achievements.map((achievement, i) => (
+            <div key={`employee-${ employee.name }-achievment-${i}`}>
+              <h5>{ achievement.title }</h5>
+              <p>{ achievement.subtitle }</p>
             </div>
           ))
         }

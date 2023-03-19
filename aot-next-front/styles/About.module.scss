@@ -95,9 +95,22 @@
     
     .bio{
       width: 90%;
-      padding: 50px 0;
+      padding-top: 50px;
       justify-self: center;
       text-indent: 1em;
+    }
+
+    .badges{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .imageContainer{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 1em 1em;
+      }
     }
   }
 
@@ -160,11 +173,12 @@
   .employee {
 
     .employeeBanner{
-      grid-template: auto auto auto / repeat(5, 1fr);
+      grid-template: repeat(4, auto) / repeat(5, 1fr);
       grid-template-areas: 
       "profile profile info info info" 
       "profile profile info info info"
-      "bio bio bio bio bio";
+      "bio bio bio bio bio"
+      "badges badges badges badges badges";
 
       .profile{
         grid-area: profile;
@@ -181,6 +195,14 @@
 
       .bio {
         grid-area: bio;
+      }
+
+      .badges {
+        grid-area: badges;
+        
+        .imageContainer{
+          margin: 1em 2em;
+        }
       }
     }
   }
