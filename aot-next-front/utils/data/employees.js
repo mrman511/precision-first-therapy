@@ -76,11 +76,11 @@ const employees = [
         designation: "OTR",
         path: "NBCOT-otr.png"
       },
-      {
-        authority: "NBCOT",
-        designation: "Adult Rehabilitation",
-        path: "NBCOT-adult-rehabilitation.png"
-      }
+      // {
+      //   authority: "NBCOT",
+      //   designation: "Adult Rehabilitation",
+      //   path: "NBCOT-adult-rehabilitation.png"
+      // }
     ]
   },
 ];
