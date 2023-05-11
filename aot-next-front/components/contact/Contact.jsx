@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
 import Form from './Form';
 import Confirmation from '../global/Confirmation';
@@ -77,7 +78,7 @@ export default function ContactMe({ styles, subject, setSubject }) {
         <div className={ [styles.contactDetails, styles.gridItem].join(' ') }>
           <div>
             <h4><strong>Our Email:</strong></h4>
-            <p className={ styles.contactEmail }>admin@aotservices.ca</p>
+            <Link href="malito:ariana.gverzdys@precisionfirsttherapy.com"><p className={ styles.contactEmail }>ariana.gverzdys@precisionfirsttherapy.com</p></Link>
           </div>
           <div>
             <h4><strong>Our Phone:</strong></h4>

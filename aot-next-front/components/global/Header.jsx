@@ -34,8 +34,8 @@ export default function Header({ styles, alt }){
   return(
     <header className={ [styles.header, (mobileMenuOpen ? styles.fixed : '') ].join(' ')  }>
       <h1 className={styles.title}>
-        <span>aot</span>
-        services
+        <span>Precision First</span>
+        Therapy
       </h1>
       <NavList 
         styles={ styles }

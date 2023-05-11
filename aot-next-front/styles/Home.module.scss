@@ -3,7 +3,7 @@
 
 .header{
   width: 100%;
-  height: 100px;
+  height: $headerHeight;
   position: fixed;
   top: 0;
   @include flexRowCenterBetween;
@@ -13,13 +13,15 @@
 
   .title{
     position: relative;
+    @include flexColumnCenter;
     margin: 0;
     margin-left: 10%;
     color: $colour3;
 
     span{
       font-family: $cursiveFont;
-      font-size: 3em;
+      font-size: 1.25em;
+      margin-bottom: -20px;
     }
   }
 
@@ -246,6 +248,10 @@
   background-attachment: fixed;
   background-size: contain;
 
+  .contactInfo{
+    @include flexColumn;
+  }
+
   article{
     width: 100%;
 
@@ -312,10 +318,6 @@
       div{
         @include flexRowCenterBetween;
 
-        h2{
-          width: 200px;
-        }
-
         ul{
           width: 350px;
           @include flexRowCenterEven;
@@ -333,7 +335,7 @@
 
       .contactInfo{
         @include flexColumn;
-        width: 200px
+        width: 350px
       }
     }
   }

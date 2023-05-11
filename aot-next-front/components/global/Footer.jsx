@@ -17,7 +17,7 @@ export default function Footer({ styles }){
     <footer className={ styles.footer }>
       <article>
         <div className={ [styles.footerHeader, styles.footerComponent].join(' ') }>
-          <h2><span>AOT</span> Services</h2>
+          <h2>Precision First Therapy</h2>
           <ul>
             <li><Link href="/" onClick={ (e) => { handleClick(e, '/') } }>Home</Link></li>
             <li><Link href="/about" onClick={ (e) => { handleClick(e, '/about') } }>About Us</Link></li>
@@ -28,10 +28,10 @@ export default function Footer({ styles }){
 
 
         <div className={ [styles.info, styles.footerComponent].join(' ') }>
-          <p>{`2023 Ariana's Occupational Therapy Services`}</p>
+          <p>{`2023 Precision First Therapy Services`}</p>
           <div className={ [ styles.contactInfo].join(' ') }>
-            <Link href={ `tel:${7787449178}` }>(778) 744-9178</Link>
-            <Link href="malito:admin@aotservices.ca">admin@aotservices.ca</Link>
+            <span><Link href={ `tel:${7787449178}` }>(778) 744-9178</Link></span>
+            <span><Link href="malito:ariana.gverzdys@precisionfirsttherapy.com">ariana.gverzdys@precisionfirsttherapy.com</Link></span>
           </div>
         </div>
       </article>
