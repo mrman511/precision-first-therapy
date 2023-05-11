@@ -33,7 +33,7 @@ export default function Employee({ styles, employee }){
           <div className={ styles.sectionsSelectors }>
             <a href={ `#${employee.name.split(' ').join('')}-certifications` } className={ styles.selector }>Certifications</a>
             <a href={ `#${employee.name.split(' ').join('')}-education` } className={ styles.selector }>Education</a>
-            <a href={ `#${employee.name.split(' ').join('')}-achivements` } className={ styles.selector }>Achivements</a>
+            <a href={ `#${employee.name.split(' ').join('')}-achievements` } className={ styles.selector }>Achivements</a>
           </div>
         </div>
 
