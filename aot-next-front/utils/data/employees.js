@@ -9,7 +9,7 @@ const employees = [
       with current provincial licensing in British Columbia. After receiving her Master’s Degree in 
       Occupational Therapy at the University of Western Ontario in 2016, she moved to Vancouver for a 
       career opportunity in helping those in the community. After 5 years, she has ventured off on her 
-      own path and proudly founded Ariana’s Occupational Therapy Services, or simply, AOT Services.
+      own path and proudly founded Precision First Therapy.
       Ariana has worked with individuals experiencing various health conditions including severe
       TBIs & concussions, bone fractures, spinal cord injuries, anxiety disorders such as OCD, and
       chronic pain. She actively liaises with a client’s treatment team to develop individualized
