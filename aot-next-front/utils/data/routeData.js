@@ -16,6 +16,10 @@ export default [
     childPath: '/service'
   },
   {
+    title: 'Rates',
+    href: '/rates'
+  },
+  {
     title: 'Contact',
     href: '/contact',
   },
