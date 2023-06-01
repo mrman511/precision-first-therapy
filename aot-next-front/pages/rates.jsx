@@ -4,6 +4,10 @@ import Header from "../components/global/Header";
 import Footer from "../components/global/Footer";
 import styles from '../styles/Home.module.scss';
 
+import RatesHeader from "../components/rates/RatesHeader";
+import RatesList from "../components/rates/RatesList";
+import ratesStyles from '../styles/Rates.module.scss';
+
 
 
 export default function Rates({}){
@@ -18,8 +22,9 @@ export default function Rates({}){
       </Head>
       <Header styles={ styles } alt={ true }/>
 
-      <main className={ [ styles.main ].join(' ') }>
-        
+      <main className={ [ styles.main, ratesStyles.main ].join(' ') }>
+        <RatesHeader styles={ ratesStyles }/>
+        <RatesList styles={ ratesStyles }/>
       </main>
 
       <Footer styles={ styles }/>
