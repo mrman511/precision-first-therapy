@@ -43,21 +43,6 @@ export default function Form(props) {
           onChange={(e) => handleChange(e) }
           placeholder={ subject ? subject : 'Subject*' }
           />
-
-        {/* { subject ? <input 
-          type="text" id="subject" 
-          name="subject" 
-          className={ styles.inputArea } 
-          onChange={(e) => handleChange(e) }
-          placeholder='Subject*'
-          value={ subject }
-        /> : <input 
-          type="text" id="subject" 
-          name="subject" 
-          className={ styles.inputArea } 
-          onChange={(e) => handleChange(e) }
-          placeholder='Subject*'
-        /> } */}
       </div>
 
       <div className={ [styles.info, styles.message].join(' ') }>
