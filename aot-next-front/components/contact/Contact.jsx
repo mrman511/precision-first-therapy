@@ -8,7 +8,7 @@ import Status from '../global/Status';
 
 import useVisualMode from '../../utils/hooks/useVisualMode';
 
-export default function ContactMe({ styles, subject, setSubject }) {
+export default function ContactMe({ styles, subject }) {
   const { mode, transition } = useVisualMode("FORM")
   const [message, setMessage] = useState({name: undefined})
   const [formErrors, setFormErrors] = useState({});
@@ -35,7 +35,7 @@ export default function ContactMe({ styles, subject, setSubject }) {
     (!message.name || message.name.length <= 2) ? addError('name') : removeError('name');
     (!subject && !message.subject) ? (!message.subject || message.subject.length <= 5) ? addError('subject') : removeError('subject'): '';
     (!message.email || !message.email.match(emailRegrex)) ? addError('email') : removeError('email');
-    (!message.message || message.message.length <= 25) ? addError('message') : removeError('message');
+    (!message.message || message.message.length <= 15) ? addError('message') : removeError('message');
   }
   
   const sendEmail = () => {
@@ -62,8 +62,6 @@ export default function ContactMe({ styles, subject, setSubject }) {
     for (let key in formErrors){
       formErrors[key] ? errBool = true : '';
     }
-    
-    console.log(formErrors)
     errBool ? setFormErrors({ ...formErrors }) : sendEmail();
   };
 
