@@ -76,7 +76,7 @@ export default function ContactMe({ styles, subject }) {
         <div className={ [styles.contactDetails, styles.gridItem].join(' ') }>
           <div>
             <h4><strong>Our Email:</strong></h4>
-            <Link href="malito:ariana.gverzdys@precisionfirsttherapy.com"><p className={ styles.contactEmail }>ariana.gverzdys@precisionfirsttherapy.com</p></Link>
+            <Link href="malito:admin@precisionfirsttherapy.com"><p className={ styles.contactEmail }>admin@precisionfirsttherapy.com</p></Link>
           </div>
           <div>
             <h4><strong>Our Phone:</strong></h4>
