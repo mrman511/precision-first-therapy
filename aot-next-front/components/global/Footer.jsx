@@ -31,7 +31,7 @@ export default function Footer({ styles }){
           <p>{`2023 Precision First Therapy Services`}</p>
           <div className={ [ styles.contactInfo].join(' ') }>
             <span><Link href={ `tel:${7787449178}` }>(778) 744-9178</Link></span>
-            <span><Link href="malito:ariana.gverzdys@precisionfirsttherapy.com">ariana.gverzdys@precisionfirsttherapy.com</Link></span>
+            <span><Link href="malito:admin@precisionfirsttherapy.com">admin@precisionfirsttherapy.com</Link></span>
           </div>
         </div>
       </article>
