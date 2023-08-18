@@ -6,7 +6,7 @@ export default [
     href: '/',
   },
   {
-    title: 'About Us',
+    title: 'About',
     href: '/about',
   },
   {

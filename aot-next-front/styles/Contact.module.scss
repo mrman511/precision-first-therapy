@@ -116,6 +116,7 @@
     h4{
       font-size: 28px;
     }
+    
   }
 
   .disclaimer{
@@ -184,13 +185,23 @@
 }
 
 @media only screen and (min-width: 620px){
-  
+  .formContainer{
+
+    .contactDetails{
+
+      p{
+        font-size: 1.25em;
+      }
+    }
+    .disclaimer{
+
+      p{
+        font-size: 1.25em;
+      }
+    }
+  }
   .contactHeader{
     display: flex;
-
-    .contactHeaderCard{
-
-    }
   }
 }
 
