@@ -38,10 +38,15 @@
     background-color: $colour1;
     color: white;
     border-bottom-left-radius: 8px;
+    z-index: 20;
     // font-size: 12px;
 
     li {
-      margin: 0 .5em
+      margin: 0 .5em;
+
+      &:hover{
+        color: $colour5
+      }
     }
   }
 
