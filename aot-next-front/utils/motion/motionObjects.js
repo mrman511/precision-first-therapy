@@ -2,11 +2,11 @@
 const top = {
   openToClosed: {
     initial: { top: '40px', rotate: 45, y: '-50%' },
-    animate: { top: "10px", rotate: 0, y: '-50%'},
+    animate: { top: "20px", rotate: 0, y: '-50%'},
     exit: {}
   },
   closedToOpen: {
-    initial: { top: "10px", rotate: 0, y: '-50%' },
+    initial: { top: "20px", rotate: 0, y: '-50%' },
     animate: { top: "40px", rotate: 45, y: '-50%' },
     exit: {}
   }
@@ -15,11 +15,11 @@ const top = {
 const middle = {
   openToClosed: {
     initial: { top: '40px', opacity: 0, width: 0, y: '-50%' },
-    animate: { top: "40px", opacity: 1, width: "70%", y: '-50%' },
+    animate: { top: "40px", opacity: 1, width: "60%", y: '-50%' },
     exit: {}
   },
   closedToOpen: {
-    initial: { top: "40px", opacity: 1, width: '70%', y: '-50%' },
+    initial: { top: "40px", opacity: 1, width: '60%', y: '-50%' },
     animate: { top: "40px", opacity: 0, width: 0, y: '-50%' },
     exit: {}
   }
@@ -28,11 +28,11 @@ const middle = {
 const bottom = {
   openToClosed: {
     initial: { top: '40px', rotate: -45, y: '-50%' },
-    animate: { top: "70px", rotate: 0, y: '-50%' },
+    animate: { top: "60px", rotate: 0, y: '-50%' },
     exit: {}
   },
   closedToOpen: {
-    initial: { top: "70px", rotate: 0, y: '-50%' },
+    initial: { top: "60px", rotate: 0, y: '-50%' },
     animate: { top: "40px", rotate: -45, y: '-50%' },
     exit: {}
   }
