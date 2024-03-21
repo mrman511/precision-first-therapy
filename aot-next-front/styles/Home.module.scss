@@ -44,8 +44,11 @@
     li {
       margin: 0 .5em;
 
-      &:hover{
-        color: $colour5
+      a{
+
+        &:hover{
+          color: $colour5
+        }
       }
     }
   }
