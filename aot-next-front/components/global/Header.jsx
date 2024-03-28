@@ -1,10 +1,10 @@
-import {motion, AnimatePresence, useCycle} from 'framer-motion';
+import { AnimatePresence, useCycle} from 'framer-motion';
 import { useEffect } from 'react';
-import Link from 'next/link';
 
 import Mcbutton from './Mcbutton';
 import NavList from './NavList';
-import MobileNavList from './MobileNavList'
+import MobileNavList from './MobileNavList';
+import ContactBar from './ContactBar'
 
 export default function Header({ styles, alt }){
   const [mobileMenuOpen, toggleMobileMenuOpen] = useCycle(false, true);
@@ -34,6 +34,7 @@ export default function Header({ styles, alt }){
 
   return(
     <header className={ [styles.header, (mobileMenuOpen ? styles.fixed : '') ].join(' ')  }>
+      <ContactBar styles={ styles } />
       <h1 className={styles.title}>
         <span>Precision First</span>
         Therapy
@@ -45,11 +46,6 @@ export default function Header({ styles, alt }){
         dropMenu={{ menu: dropMenu, toggle: toggleDropMenu }}
         handle={{over: handleOver, out: handleOut}}
       />
-      <ul className={ styles.contactBar }>
-        <li><Link href={ `tel:${7787449178}` }>(778) 744-9178</Link></li>
-        <li><Link href="malito:admin@precisionfirsttherapy.com">admin@precisionfirsttherapy.com</Link></li>
-        <li>New Westminster, BC</li>
-      </ul>
       
       <AnimatePresence>
         { mobileMenuOpen && <MobileNavList styles={ styles } />}
